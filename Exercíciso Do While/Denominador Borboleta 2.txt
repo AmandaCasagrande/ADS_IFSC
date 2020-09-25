@@ -1,0 +1,77 @@
+#include <stdio.h>
+int main(void) {
+
+  float numerador1, numerador2, denominador1, denominador2;
+  float resultado;
+  double novoNum, novoDen;
+  int resto, num, den;
+  char entrada, operacao;
+  int respostaReal1, respostaReal2;
+  float soma1, soma2, denomBorboleta;
+
+  //resultado = soma1 + soma2 / denomBorboleta;
+
+  do {
+    printf("Digite o numerador e o denominador: \n");
+    scanf(" %f %f", &numerador1, &denominador1);
+    printf("Digite a operação: ");
+    scanf(" %c", &operacao);
+    
+    while (operacao != '+' && operacao != '-' && operacao != '*' && operacao != '/' ){
+      printf("Digite a operação: ");
+      scanf(" %c", &operacao);
+    }
+    
+    printf("Digite o numerador e o denominador: \n");
+    scanf(" %f %f", &numerador2, &denominador2);
+    
+    if (denominador1 == 0 || denominador2 == 0 || numerador1 == 0 || numerador2 == 0){
+      printf("Não foi possível realizar a operação. ");
+      break;
+      } else {
+        soma1 = numerador1 * denominador2; // 18
+        soma2 = numerador2 * denominador1; // 40
+        denomBorboleta = denominador1 * denominador2; // 48
+        den = denomBorboleta;
+    switch (operacao){
+      case '+':
+        num = soma1 + soma2;
+        resultado = (num / den);
+        break;
+      case '-':
+        num = soma1 - soma2;
+        den = denomBorboleta;
+        resultado = (num / den);
+        break;
+      case '*':
+        num = numerador1 * numerador2;
+        resultado = (num / den);
+        break;
+      case '/':
+        num = numerador1 * denominador1;
+        resultado = (num / den);
+        break;
+      }
+    
+    
+    while (resto != 0){
+      num = den;
+      den = resto;
+      resto = num % den;
+    }
+      respostaReal1 = num / den;
+    respostaReal2 = den / den;
+    printf("Resultado = %i \n\n", respostaReal1);
+    
+    printf("Deseja continuar? ");
+    scanf(" %c", &entrada);
+    
+    while(entrada != 'N' && entrada != 'Y'){
+      printf("Erro. Digite novamente.");
+      scanf(" %c", &entrada);
+      }
+    }
+  } while (entrada == 'Y');
+
+return 0;
+}
