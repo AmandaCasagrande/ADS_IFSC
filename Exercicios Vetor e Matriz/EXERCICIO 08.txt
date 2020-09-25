@@ -1,0 +1,42 @@
+EXERCICIO 08:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void){
+
+  int matriz[10][10];
+  int i, j;
+  int soma = 0;
+  srand(time(NULL)); //Gerar matriz com elementos aleatórios
+
+  printf("Matriz:\n");
+
+  for(i = 0; i < 10; i++){ 
+    for(j = 0; j < 10; j++){
+      matriz[i][j] = 10 + rand() % 10; //Gerar a diagonal secundária
+      printf("%3d", matriz[i][j]);
+      
+      int diagonal = i + j;
+      if(diagonal == 9){
+        soma += matriz[i][j]; //Soma da diagonal secundária
+      }
+    }
+    printf("\n");
+  }
+  printf( "\nSoma da diagonal secundária: %d\n\n", soma );
+  
+  for(i = 0; i < 10; i++){ 
+    for(j = 0; j < 10; j++){
+
+      int diagonal = i + j;
+      if(diagonal == 9){
+        soma += matriz[i][j]; //Soma da diagonal secundária
+      }
+    }
+  }
+  printf( "\nSoma acima da diagonal secundária: %d", soma ); //soma dos indices precisa ser menor a 9 (i + j <9) 
+
+  return 0;
+}

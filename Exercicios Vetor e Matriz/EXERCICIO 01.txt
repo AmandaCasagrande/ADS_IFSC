@@ -1,0 +1,70 @@
+EXERCICIO 01:
+
+#include <stdio.h>
+
+
+int main(void) {
+  // Quantidade de alunos na turma
+  int numeroAlunos;
+  printf("Número de alunos(as) da turma: \n");
+  scanf("%d", &numeroAlunos);
+
+  //Cadastro de notas 
+  float notasAlunos[numeroAlunos]; //vetor criado
+  for (int i = 0; i < numeroAlunos; i++){
+    printf("Digite a nota do(a) aluno(a) %d: \n", i);
+    scanf("%f", &notasAlunos[i]);
+  }
+  printf("__________________________________\n\n");
+
+  //a) Exiba todas as notas
+  printf("Notas de todos os(as) alunos(as): \n");
+  for (int i = 0; i < numeroAlunos; i++){
+    printf("%.2f \n", notasAlunos[i]);
+  }
+  
+  printf("__________________________________\n\n");
+  //b) Exibir notas na ordem inversa
+  printf("Notas de todos os(as) alunos(as) em ordem inversa: \n");
+  for (int i = numeroAlunos - 1; i >= 0; i--){
+    printf("%.2f \n", notasAlunos[i]);
+  }
+
+  printf("__________________________________\n\n");
+  //c) Soma médias alunos
+  float soma = 0, media;
+  for (int i = 0; i < numeroAlunos; i++){
+    soma = soma + notasAlunos[i];
+  } 
+  media = soma / numeroAlunos;
+  printf("Média da turma:  %.2f \n", media);
+
+  //d) Calcular notas acima da média
+  int contador = 0;
+  for (int i = 0; i < numeroAlunos; i++){
+    if (notasAlunos[i] > media){
+      contador = contador + 1;
+    }
+  }
+  printf("Quantidade de notas acima da média: %d \n", contador);
+
+  //d)Percorrer vetor para encontrar maior e menor nota
+  float maiorNota = notasAlunos[0];
+  float menorNota = notasAlunos[0];
+
+  for(int i = 0; i < numeroAlunos; i++){
+          
+    if(notasAlunos[i] > maiorNota){
+      maiorNota = notasAlunos[i];
+    }
+
+    if(notasAlunos[i] < menorNota){
+      menorNota = notasAlunos[i]; 
+    }
+  }
+
+  printf("A maior nota é %.2f \n", maiorNota);
+  printf("A menor nota é %.2f \n", menorNota);
+
+ return 0;
+}

@@ -1,0 +1,23 @@
+EXERCICIO 2:
+
+#include <stdio.h>
+
+int main(void) {
+  int valorEntrada, resultadoFinal;
+  printf("\n\n------ CÁLCULO DE FATORIAL -----\n\n");
+  printf("Dê entrada a um número para calcular seu fatorial: ");
+  scanf("%d", &valorEntrada);
+
+  while (valorEntrada == 0 || valorEntrada < 0){
+    printf("Valor Inválido. Digite novamente: ");
+    scanf("%d", &valorEntrada);
+  }
+
+  resultadoFinal = valorEntrada;
+  for (int i = valorEntrada - 1; i >= 1; i--){
+    resultadoFinal = resultadoFinal * i;
+  }
+  printf("\n\nFatorial: %d", resultadoFinal);
+
+  return 0;
+}

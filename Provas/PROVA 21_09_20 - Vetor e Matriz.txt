@@ -1,0 +1,217 @@
+
+PROVA PROGRAMAÇÃO 21/09/2020
+EXERCICIO 01:
+
+#include <stdio.h>
+
+int main(void) {
+  int cadastroCriancas, soma = 0, contador1 = 0, contador2 = 0;
+  float mediaPesos;
+  printf("----- CADASTRO DE CRIANÇAS ----- \n\n");
+  printf("Quantas crianças deseja cadastrar? \n");
+  scanf(" %d", &cadastroCriancas);
+
+  float pesoCriancas[cadastroCriancas];
+
+  for (int i = 0; i < cadastroCriancas; i++){
+    printf("Digite o peso de cada criança: \n");
+    scanf(" %f", &pesoCriancas[i]);
+    soma = soma + pesoCriancas[i];
+  }
+
+  printf("\n----- EXIBIR DADOS DE CRIANÇAS ----- \n\n");
+  mediaPesos = soma / cadastroCriancas;
+  printf("A média de pesos cadastrados é de %2.f kg. \n", mediaPesos);
+
+  for (int i = 0; i < cadastroCriancas; i++){
+    if (pesoCriancas[i] > mediaPesos){
+      contador1 = contador1 + 1;
+    }
+
+    if (pesoCriancas[i] > 30){
+      contador2 = contador2 + 1;
+    }
+  }
+  printf("Há %d criança(s) com peso acima da média. \n", contador1);
+  printf("Há %d criança(s) com peso acima de 30kg.\n", contador2);
+  return 0;
+}
+
+EXERCICIO 02:
+
+#include <stdio.h>
+
+int main(void) {
+  int cadastroNumeros;
+
+  printf("----- CADASTRO DE NÚMEROS ----- \n\n");
+  printf("Quantas números deseja cadastrar? \n");
+  scanf(" %d", &cadastroNumeros);
+
+  float numeros[cadastroNumeros];
+  float original[cadastroNumeros];
+  printf("\nAbaixo digite os números que deseja cadastrar: \n");
+  for (int i = 0; i < cadastroNumeros; i++){
+    scanf(" %f", &numeros[i]);
+    original[i] = numeros[i]; //Atribuição para "salvar" a ordem original digitada.
+  }
+
+  printf("\n----- NÚMEROS CADASTRADOS ----- \n\n");
+  //Ordenar em descrescente:
+  int aux;
+  for (int i = 0; i < cadastroNumeros; i++){
+    for (int j = 0; j < cadastroNumeros; j++){
+      if (numeros[i] > numeros[j]){
+        aux = numeros[i];
+        numeros[i] = numeros[j];
+        numeros[j] = aux;
+      }
+    }
+  }
+
+  printf("DECRESCENTE: ");
+  for (int i = 0; i < cadastroNumeros; i++){
+    printf("%2.f ", numeros[i]);
+  }
+  printf("\n\nSEQUÊNCIA ORIGINAL CADASTRADA: ");
+  for (int i =0; i < cadastroNumeros; i++){
+  printf("%2.f ", original[i]);
+  }
+ 
+  return 0;
+}
+
+EXERCICIO 03: 
+
+#include <stdio.h>
+
+int main(void) {
+  char vetor[29];
+
+  int z = 1;
+  int x = 19;
+  for (int i = 10; i < 20; i++){
+    scanf(" %c", &vetor[i]);
+
+    vetor[i - z] = vetor[i];
+    vetor[i + x] = vetor[i];
+
+    z = z + 2;
+    x = x - 2;
+  }
+
+  // Precisa de um segundo for para imprimir o vetor
+  printf("%s", vetor);
+  return 0;
+}
+
+
+EXERCICIO 4: 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+  int matriz[10][10];
+  srand(time(NULL)); 
+  int soma;
+
+  //Imprimir Matriz:
+  printf("\n\n\n");
+  printf("\n----- MATRIZ -----\n\n");
+  for (int i = 0; i < 10; i++){
+    for (int j = 0; j < 10; j++){
+      matriz[i][j] = 10 + rand() % 10;
+      printf("%4d", matriz [i][j]);
+    }
+    printf("\n");
+  }
+
+  //Soma das linhas:
+  printf("\n----- SOMA DAS LINHAS -----\n");
+  for (int i = 0; i < 10; i++){
+    soma = 0;
+    for (int j = 0; j < 10; j++){
+      soma = soma + matriz[i][j];
+    }
+    printf("\n  Soma da linha %d: %d \n", i, soma);
+  }
+
+  //Soma das colunas:
+  printf("\n\n----- SOMA DAS COLUNAS ----- \n");
+  for (int i = 0; i < 10; i++){
+    soma = 0;
+    for (int j = 0; j < 10; j++){
+      soma = soma + matriz[j][i];
+    }
+    printf("\n  Soma da coluna %d: %d \n", i, soma);
+  }
+
+  for(int i = 0; i < 10; i++){ 
+    for(int j = 0; j < 10; j++){
+      int diagonal = i + j;
+      if(diagonal == 9){
+        soma += matriz[i][j]; //Soma da diagonal secundária
+      }
+    }
+  }
+  printf("\n\n----- SOMA DA DIAGONAL SECUNDÁRIA ----- \n");
+  printf("  Soma da diagonal secundária: %d\n\n", soma );
+  
+  for(int i = 0; i < 10; i++){ 
+    for(int j = 0; j < 10; j++){
+      int diagonal = i + j;
+      if(i == j){
+        soma += matriz[i][j]; //Soma da diagonal secundária
+      }
+    }
+  }
+
+    printf("\n\n----- SOMA DA DIAGONAL PRINCIPAL ----- \n");
+  printf("  Soma da diagonal principal: %d\n\n", soma );
+
+  return 0;
+}
+
+EXERCICIO 5:
+#include <stdio.h>
+
+int main(void) {
+  int qntdAlunos, qntdNotas, qtdAptos;
+
+  printf("----- CADASTRO DE ALUNOS(AS) -----\n");
+  printf("Quantos alunos(as) deseja cadastrar? ");
+  scanf("%d", &qntdAlunos);
+  printf("Quantos notas deseja cadastrar? ");
+  scanf("%d", &qntdNotas);
+
+  float notas [qntdAlunos][qntdNotas], media, soma;
+  
+  for (int i = 0; i < qntdAlunos; i++){
+    soma = 0;
+    for (int j = 0; j < qntdNotas - 1; j++){  
+      printf("Digite as notas do alunos %d: ", i+1);
+      scanf("%f", &notas[i][j]);
+      soma = soma + notas[i][j];
+    }
+    media = soma / (qntdNotas - 1);
+    notas[i][qntdNotas - 1] = media;
+  }
+
+  qtdAptos = 0;
+  for (int i = 0; i < qntdAlunos; i++){
+    for (int j = 0; j < qntdNotas; j++){  
+      printf("%.2f ", notas[i][j]);
+    }
+
+    if (notas[i][qntdNotas - 1] > 6){
+      qtdAptos = qtdAptos + 1;
+    }
+    printf("\n");
+  }
+
+  printf("Quantidade de alunos aptos: %d", qtdAptos);
+
+  return 0;
+}

@@ -1,0 +1,36 @@
+EXERCÍCIO 03:
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void){
+  int qntdCodigo;
+  char codigos[qntdCodigo][7], codigoPesquisado[7];
+
+  printf("Quantos códigos serão cadastrados: ");
+  scanf("%d", &qntdCodigo);
+
+  printf("---------CADASTRO DE CÓDIGO-----------\n");
+  for (int i = 0; i < qntdCodigo; i++){
+    scanf(" %s", codigos[i]);
+  }
+
+  printf("---------PESQUISA DE CÓDIGO-----------\n");
+  printf("Qual código deseja pesquisar?\n");
+  scanf(" %s", codigoPesquisado);
+
+
+  int flag = 0;
+  for (int i = 0; i < qntdCodigo; i++){
+    if(!strcmp(codigoPesquisado, codigos[i])){
+      printf("Código Pesquisado: %s Posição: %d", codigoPesquisado, i);
+      flag = 1;
+    }
+  }
+
+  if (!flag){
+    printf("%s não está cadastrado!", codigoPesquisado);
+  }
+
+  return 0;
+}

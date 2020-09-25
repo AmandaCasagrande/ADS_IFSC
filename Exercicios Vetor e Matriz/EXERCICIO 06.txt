@@ -1,0 +1,57 @@
+EXERCICIO 06:
+
+#include <stdio.h>
+
+int main(void) {
+
+  int horarioRestaurante, semanaMes;
+  // matriz = [6][4 ou 5]  >> os valores da serão nomes
+  // matriz = [diaSemana][semanaMes]
+
+  //Receber qntd semanas:
+  printf("Quantidade de semanas do mês: \n");
+  scanf("%d", &semanaMes);
+
+  while (semanaMes != 4 && semanaMes!= 5){
+    printf("Erro. Digite novamente! ");
+    scanf("%d", &semanaMes);
+  }
+
+  // dia da semana = 6
+  int qntdClientes [7][semanaMes+1], somaClientes = 0;
+
+  //Cadastrar Clientes:
+  for (int i = 1; i <= semanaMes; i++){ // semana do mes
+    for (int j = 1; j <= 6; j++){ //dia da semana
+      printf("Informe a quantidade de cliente para o dia %d para a semana %d: ", j, i);
+      scanf("%d", &qntdClientes[j][i]);
+      somaClientes = somaClientes + qntdClientes[j][i];
+    }
+  }
+
+  float mediaClientes = (somaClientes / (6 * semanaMes));
+
+  int qntdDias = 0;
+  for (int i = 1; i <= semanaMes; i++){ 
+    for (int j = 1; j <= 6; j++){ 
+      if (qntdClientes[j][i] > mediaClientes){
+        qntdDias = qntdDias + 1;
+      }
+    }
+  }
+  printf("Quantidade de dias com movimento acima do número médio de clientes: %d\n", qntdDias);
+
+  int menorMovimento, diaMenorMovimento;
+   for (int i = 1; i <= semanaMes; i++){
+    menorMovimento = qntdClientes[i][1];
+    for (int j = 1; j <= 6; j++){ 
+      if (qntdClientes[i][j] < menorMovimento){
+        menorMovimento = qntdClientes[i][j];
+        diaMenorMovimento = j;
+      }  
+    }
+    printf("O dia com menor movimento na semana %d foi %d\n", i, diaMenorMovimento);
+  }
+  
+  return 0;
+}

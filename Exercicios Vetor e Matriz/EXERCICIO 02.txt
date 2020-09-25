@@ -1,0 +1,27 @@
+EXERCICIO 02:
+
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+  float alturaCadastros[20];
+  printf("Cadastre as alturas: \n");
+  for (int i = 0; i < 20; i++){
+    scanf("%f", &alturaCadastros[i]);
+  }
+  //Soma de alturas para calcular a média
+  float soma = 0, media;
+  for (int x = 0; x < 20; x++){
+    soma = soma + alturaCadastros[x];
+  } 
+  media = soma / 20;
+
+  //Desvio Padrão - i = cada altura
+  float denominadorDesvio;
+  for (int i = 0; i < 20; i++){
+    denominadorDesvio = pow((i - media), 2);
+  }
+  float desvioPadrao = sqrt((denominadorDesvio)/ 20 - 1);
+  printf("Desvio Padrão: %f", desvioPadrao);
+  return 0;
+}

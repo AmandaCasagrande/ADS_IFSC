@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(void) {
+
+int numerosCadastro [20];
+
+//Cadastro de Números:
+printf("Cadastre vinte números: \n");
+for (int i = 0; i < 20; i++){
+  scanf("%d", &numerosCadastro[i]);
+}
+
+//Imprimir números cadastrados:
+for (int i = 0; i < 20; i++){
+  printf("%d ", numerosCadastro[i]);
+}
+
+//Organiza os números em ordem descrescente:
+int aux;
+for (int i = 0; i < 20; i++){
+  for (int j = 0; j < 20; j++){
+    if (numerosCadastro[i] > numerosCadastro[j]){
+      aux = numerosCadastro[i];
+      numerosCadastro[i] = numerosCadastro[j];
+      numerosCadastro[j] = aux;
+    }
+  }
+}
+
+//Imprime os números em ordem descrescente:
+printf("\nVetor = ");
+for (int i = 0; i < 20; i++){
+  printf("%2d", numerosCadastro[i]);
+}
+
+
+  return 0;
+}

@@ -1,0 +1,24 @@
+EXERCICIO 3:
+
+#include <stdio.h>
+
+int main(void) {
+int numero, ultimoNumero, aux;
+
+  printf("----- SEQUÊNCIA FIBONACCI ----- \n\n");
+ 
+  for (int i = 1; i <= 30; i++) {
+
+   if (i == 1) {
+     ultimoNumero = 0;
+     numero = 1;
+    } else {
+     aux = numero;
+     numero = numero + ultimoNumero;
+     ultimoNumero = aux;
+    }
+
+  printf("%d ", numero);
+}
+  return 0;
+}

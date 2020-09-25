@@ -1,0 +1,46 @@
+EXERCICIO 01:
+
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+
+  //equacao = ((valorA * pow(x, 2)) + (valorB * x) + valorC);
+  float valorA, valorB, valorC, equacao, x, delta, bhaskaraPositivo, bhaskaraNegativo;
+  printf("Digite o valor de A: ");
+  scanf("%f", &valorA);
+
+  if (valorA == 0){
+    printf("Valor de A é igual a 0. Não corresponde a uma equação de 2º grau.");
+
+  } else {
+
+    printf("Digite o valor de B: ");
+    scanf("%f", &valorB);
+    printf("Digite o valor de C: ");
+    scanf("%f", &valorC);
+
+    //Cálculo de delta para saber as raízes:
+    delta = (pow(valorB, 2) - (4 * valorA * valorC)); 
+    //Cálcula de Bhaskara para saber o valor de x' e/ou x'':
+    bhaskaraPositivo = (- valorB + sqrt(delta)) / (2 * valorA);
+    bhaskaraNegativo = (- valorB - sqrt(delta)) / (2 * valorA);
+
+    if (delta < 0){
+      printf("\n\nDelta é menor que zero! Não há nenhuma raiz real.");
+    } else {
+      if (delta == 0){
+        printf("\n\nDelta é nulo! Há uma única raiz real. \n");
+        printf("Raiz de x': %f", bhaskaraPositivo);
+      } else {
+        if (delta > 0){
+          printf("\n\nDelta é maior que zero! Há duas raízes reais. \n");
+          printf("Raiz de x': %f\n", bhaskaraPositivo);
+          printf("Raiz de x'': %ff", bhaskaraNegativo);
+        }
+      }
+    }
+  }
+
+  return 0;
+}
