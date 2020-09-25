@@ -1,0 +1,9 @@
+/*
+
+10) Crie um algoritmo que leia dois valores A e B e
+troque os valores das variáveis de forma que A
+passe a ter o valor de B e B passe a ter o valor de
+A. Após a troca, o algoritmo deve exibir os novos
+valores de A e B.
+
+*/

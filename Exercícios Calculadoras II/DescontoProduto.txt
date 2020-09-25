@@ -1,0 +1,9 @@
+/*
+
+8) Escreva um algoritmo que calcule o desconto de
+um produto. O algoritmo deve solicitar o valor do
+produto e a porcentagem de desconto e exibir o
+valor do desconto e do novo valor do produto.
+
+
+*/

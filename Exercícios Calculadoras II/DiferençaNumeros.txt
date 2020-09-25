@@ -1,0 +1,5 @@
+/*
+1) Escreva um algoritmo que leia dois números e que 
+apresente a diferença do primeiro pelo segundo número digitado. 
+
+*/

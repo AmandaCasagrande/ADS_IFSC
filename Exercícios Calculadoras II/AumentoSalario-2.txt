@@ -1,0 +1,11 @@
+/*
+
+9) Escreva um algoritmo para ler o salário de um
+funcionário e aumentá-lo em 20%. Após o
+aumento, desconte 10% de impostos. Imprima o
+salário inicial, o salário com o aumento e o salário
+líquido (com desconto). 
+
+
+
+*/

@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main(void) {
+
+  float valor1, valor2, resultado;
+  char operacao;
+  char entrada = 'Y';
+
+  while (entrada == 'Y'){
+
+    printf("Digite o valor desejado:\n");
+    scanf(" %f", &valor1);
+    scanf(" %s", &operacao);
+    scanf(" %f", &valor2);
+
+    switch (operacao){
+      case '+':
+        resultado = valor1 + valor2;
+      break;
+
+      case '-':
+        resultado = valor1 + valor2;
+      break;
+
+      case '*':
+        resultado = valor1 * valor2;
+      break;
+
+      case '/':
+        if (valor2 == 0){
+          printf("Erro: divisão por zero!");
+        }
+        resultado = valor1 / valor2;
+      break;
+    }
+    printf("O resultado da operação é %.2f\n",resultado);
+    printf("Deseja fazer outro cálculo? Digite 'Y' para SIM ou 'N' para NÃO: ");
+    scanf(" %c", &entrada);
+  }
+  return 0;
+}

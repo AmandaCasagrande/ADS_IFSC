@@ -1,0 +1,7 @@
+/*
+4) Escreva um algoritmo que leia um valor em reais e exiba o equivalente em dólares,
+em euros e em pesos argentinos. Considere que um dólar vale R$ 3,8000, 
+um euro vale R$ 4,2100 e um peso argentino R$ 0,087.
+
+
+*/

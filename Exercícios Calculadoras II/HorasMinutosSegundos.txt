@@ -1,0 +1,8 @@
+/*
+
+11) Crie um algoritmo que leia um valor em
+segundos e determine quantas horas, minutos e
+segundos existem nesse valor.
+
+
+*/

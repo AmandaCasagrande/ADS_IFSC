@@ -1,0 +1,9 @@
+/*
+
+7) Escreva um algoritmo que calcule o aumento de
+um salário. O algoritmo deve solicitar o valor do
+salário e a porcentagem de aumento e exibir o
+valor do aumento e do novo salário.
+
+
+*/

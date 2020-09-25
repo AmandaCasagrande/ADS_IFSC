@@ -1,0 +1,6 @@
+/*
+3) Escreva um algoritmo que leia a base e a altura de um retângulo e mostre os resultados: 
+Perímetro = 2 * (altura + base) 
+Área = base * altura
+
+*/
