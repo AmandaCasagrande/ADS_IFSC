@@ -1,0 +1,17 @@
+/*
+
+6. Impressão de números inteiros - 1
+Escreva um algoritmo que imprima os números inteiros de 10 a 45.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  for(int i = 10; i <= 45; i++){
+    printf("Número %d \n", i);
+  }
+ 
+return 0;
+}

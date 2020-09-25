@@ -1,0 +1,31 @@
+/*
+
+11. Número triangular
+Faça uma algoritmo que leia um número inteiro positivo e 
+verifique se ele é um número triangular. 
+Um número é triangular quando é resultado da multiplicação de 3 números consecutivos. 
+Ex: 24 = 2*3*4.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+  int numero;
+  printf("Informe um número inteiro: ");
+  scanf("%d", &numero);
+
+  for(int i = 1; i <= numero; i++){
+    int a = i;
+    int b = i + 1;
+    int c = i + 2;
+ 
+  if (a*b*c == numero) {
+    printf("Esse número é triangular! \n");
+    printf("%d*%d*%d=%d", a, b, c, numero);
+    break;
+  }
+}
+
+return 0;
+}

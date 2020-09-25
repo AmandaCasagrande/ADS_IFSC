@@ -1,0 +1,22 @@
+/*
+
+7. Impressão de números inteiros - 2
+Escreva um algoritmo que imprima os números
+
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  for(int i = 10; i <= 1000; i++){
+    if(i != 1000){
+      printf("%d, ", i);
+    } else {
+      printf("%d.", i);
+    }
+  }
+ 
+return 0;
+}

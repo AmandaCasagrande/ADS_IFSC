@@ -1,0 +1,47 @@
+/*
+
+15. Porcentagem e média de idade de pessoas de cada sexo
+Faça um algoritmo que leia o sexo (M/F) e a idade de 500 pessoas
+e que apresente ao final a porcentagem de pessoas de cada sexo e a
+média de idade de cada sexo.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  char sexo;
+  int idade, qntdF = 0, qntdM = 0, somaIdades = 0;
+  int somaF = 0, somaM = 0;
+  float percentual, media;
+  
+  printf("Informe o sexo e a idade: ");
+  
+  for (int i = 1; i <= 500; i++) {
+    printf("Informe o sexo: ");
+    scanf("%c", &sexo);
+    printf("Informe a idade: ");
+    scanf("%d", &idade);
+  
+    if (sexo == 'F') {
+      qntdF = qntdF + 1;
+      somaF = somaF + idade;
+    } else {
+      if (sexo == 'M') {
+        qntdM = qntdM + 1;
+        somaM = somaM + idade;
+      }
+    }
+  }
+  
+  percentual = (qntdF * 100) / 500;
+  media = somaF / qntdF;
+  printf("Percentual do sexo Feminino: %.2f%% \n Média de Idade: %.2f anos. \n", percentual, media);
+  
+  percentual = (qntdM * 100) / 500;
+  media = somaM / qntdM;
+  printf("Percentual do sexo Masculino: %.2f%% \n Média de Idade: %.2f anos. \n", percentual, media);
+ 
+return 0;
+}

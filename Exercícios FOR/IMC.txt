@@ -1,0 +1,26 @@
+/*
+
+5. IMC
+Faça um algoritmo que leia a altura e o peso de 100 pessoas e exiba o IMC de cada uma. 
+IMC = peso/altura2
+
+*/
+
+#include <stdio.h>
+#include <math.h>
+ 
+int main(void) {
+ 
+  float altura, peso, calculo;
+  
+  for (int i = 1; i <= 100; i++) {
+    printf("Digite o peso e altura:");
+    scanf("%f", &peso);
+    scanf("%f",  &altura);
+  
+    calculo = peso / pow(altura, 2);
+    printf("IMC = %.2f \n", calculo);
+  }
+ 
+return 0;
+}

@@ -1,0 +1,46 @@
+/*
+
+17. Seleção RH
+O setor de recursos humanos de uma empresa fez uma seleção para auxiliar de escritório,
+disputada por 30 candidatos. Cada candidato fez
+uma prova de múltipla escolha de 100 questões, acertando uma certa
+quantidade de respostas.
+
+Faça um algoritmo que leia, para cada candidato, o nome e aquantidade de respostas certas. Ao final exiba: 
+a) A quantidade de candidatos que acertaram mais do que 50 questões.
+b) O nome e a quantidade de acertos do candidato que acertou mais
+questões. Ignore o caso de empates.
+
+*/
+#include <stdio.h>
+#include <string.h>
+ 
+int main(void) {
+ 
+  char nome[10], nomeMaisAcertos[10];
+  int respostasCorretas, qntdCandidatos = 0, qntdMaiorAcertos = 0;
+  
+  printf("Digite o nome dos candidatos: ");
+  printf("Digite a quantidade de questões corretas: ");
+  
+  for (int i = 1; i <= 5; i++){
+    scanf("%c", nome);
+    scanf("%d", &respostasCorretas);
+  
+    if (respostasCorretas > qntdMaiorAcertos){
+      qntdMaiorAcertos = respostasCorretas;
+      strcpy(nome, nomeMaisAcertos);
+    }
+  
+    if (respostasCorretas > 50) {
+      qntdCandidatos = qntdCandidatos + 1;
+    }
+  }
+  
+  printf("Acertos superior a 50: %d candidatos. \n", qntdCandidatos);
+  printf("Candidato com maior acerto: %s \n", nomeMaisAcertos);
+  printf("Maior quantidades de acertis: %d \n", qntdMaiorAcertos);
+ 
+return 0;
+}
+

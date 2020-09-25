@@ -1,0 +1,25 @@
+/*
+
+1) Cálculo Potência: Faça um algoritmo que leia dois valores inteiros, a e b, e calcule e
+mostre a potência de ab. Não pode usar a função pow().
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valorA, valorB, potenciaAB;
+  printf("Digite dois valores: ");
+  scanf("%d %d", &valorA, &valorB);
+  potenciaAB = valorA;
+
+  for (int x = 1 ; x < valorB; x++) {
+    potenciaAB = potenciaAB * valorA;
+  }
+ 
+  printf("%d \n", potenciaAB);
+ 
+ return 0;
+}
+

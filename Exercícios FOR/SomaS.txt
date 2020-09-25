@@ -1,0 +1,26 @@
+/*
+
+20. Soma S
+Faça um algoritmo que leia um número N e calcule o resultado da
+expressão abaixo.
+
+S = N/1 + N/2 + N/3 + ... + N/N
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+  int numero;
+  float soma = 0;
+ 
+  printf("Digite o número: ");
+  scanf("%d", &numero);
+  for (float i = 1; i <= numero; i++) {
+    soma = soma + numero / i;
+  }
+ 
+  printf("S = %f \n", soma);
+
+ return 0;
+}

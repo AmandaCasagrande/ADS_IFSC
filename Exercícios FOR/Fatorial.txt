@@ -1,0 +1,26 @@
+/*
+
+4. Fatorial
+Faça um algoritmo que leia um número N e calcule o seu fatorial.
+
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valorN, fatorialN, resultado;
+  
+  printf("Digite um valor: ");
+  scanf("%d", &valorN);
+  
+  resultado = valorN;
+  for (fatorialN = valorN - 1; fatorialN >= 1; fatorialN--) {
+    resultado =  resultado * fatorialN;
+  }
+  
+  printf("N! = %d", resultado);
+
+ return 0;
+}

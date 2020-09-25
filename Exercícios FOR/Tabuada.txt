@@ -1,0 +1,22 @@
+/*
+
+22. Tabuada da multiplicação
+Faça um algoritmo que leia um número e que exiba a tabuada de multiplicação do mesmo.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+  int numero, resposta;
+ 
+  printf("Digite o número: ");
+  scanf("%d", &numero);
+ 
+  for (int i = 1; i <= 10; i++){
+    resposta = numero * i;
+    printf("%d x %d = %d \n", numero, i, resposta);
+  }
+  
+  return 0;
+}

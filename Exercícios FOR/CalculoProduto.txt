@@ -1,0 +1,26 @@
+/*
+
+2) Cálculo produto
+Faça um algoritmo que calcule o produto de dois números inteiros usando somas sucessivas. Não pode usar o operador de multiplicação  
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+
+  int valorA, valorB, soma;
+
+  printf("Digite dois valores: ");
+  scanf("%d %d", &valorA, &valorB);
+
+  soma = valorB;
+  for (int x = 1; x < valorA; x++){
+    soma = soma + valorB;
+  }
+  
+  printf("%d", soma);
+
+return 0;
+}
+

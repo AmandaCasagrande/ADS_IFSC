@@ -1,0 +1,37 @@
+/*
+
+18. Sequência de Fibonacci
+
+Faça um algoritmo que imprima os N primeiros números da sequência de Fibonacci. 
+Essa sequência começa com 1 e 1, e cada número seguinte é a soma dos sois anteriores.
+1, 1, 2, 3, 5, 8, 13, 21,...
+
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+
+  int qtdSequencia, numero, ultimoNumero, aux;
+  printf("Digite a quantidade de números a serem impressos: ");
+  scanf("%d", &qtdSequencia);
+  
+  for (int i = 1; i <= qtdSequencia; i++) {
+    if (i == 1) {
+      ultimoNumero = 0;
+      numero = 1;
+    } else {
+      aux = numero;
+      numero = numero + ultimoNumero;
+      ultimoNumero = aux;
+    }
+  printf("%d \n", numero);
+  }
+ 
+ return 0;
+}
+
+
+

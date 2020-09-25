@@ -1,0 +1,26 @@
+/*
+
+10. Maior número lido - 2
+Faça um algoritmo que leia 100 números inteiros e que apresente ao final o maior de todos.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int num, maxVal;
+  for(int i = 1; i <= 5; i++){
+    scanf("%d", &num);
+    if (i == 1) {
+      maxVal = num;
+    } else {
+      if (num > maxVal) {
+        maxVal = num;
+      }
+    }
+  }
+  printf("Maior número = %d \n", maxVal);
+  
+ return 0;
+}

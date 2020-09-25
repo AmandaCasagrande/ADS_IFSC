@@ -1,0 +1,25 @@
+/*
+
+3. Divisores
+Faça um algoritmo que leia um valor inteiro N e mostre seus divisores.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ int valorN, resto, divisores;
+ 
+  printf("Digite um valor: ");
+  scanf("%d", &valorN);
+ 
+  for(int divisor = 1; divisor <= valorN; divisor++){
+    resto = valorN % divisor;
+    if (resto == 0) {
+      divisores = valorN / divisor;
+      printf("N = %d \n", divisores);
+    }
+  }
+ 
+return 0;
+}

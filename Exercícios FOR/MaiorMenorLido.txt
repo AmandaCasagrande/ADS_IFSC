@@ -1,0 +1,31 @@
+/*
+
+8. Maior e menor número lido
+Faça um algoritmo que leia 100 números inteiros e que 
+apresente ao final o maior e o menor de todos.
+
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int num, maxVal = 0, minVal = 0;
+  
+  for(int i = 1; i <= 100; i++){
+    scanf("%d", &num);
+    
+    if (num > maxVal || maxVal == 0){
+      maxVal = num;
+    }
+    if (num < minVal || minVal == 0){
+      minVal = num;
+    }
+  }
+  
+  printf("Maior número = %d \n", maxVal);
+  printf("Menor número = %d \n", minVal);
+ 
+return 0;
+}

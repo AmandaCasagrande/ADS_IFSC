@@ -1,0 +1,27 @@
+/*
+
+13. Peso médio e altura média
+Faça um algoritmo que leia o peso e a altura de um grupo de 1000 pessoas e 
+informe o peso e a altura médio desse grupo.
+
+*/
+
+#include <stdio.h>
+int main(void) {
+  float peso, altura, mediaP, mediaA, somaP = 0, somaA = 0;
+  
+  for(int i = 1; i <= 1000; i++){
+    scanf("%f %f", &peso, &altura);
+    somaP = somaP + peso;
+    somaA = somaA + altura;
+  }
+  
+  mediaP = somaP / 1000;
+  printf("A média de peso é de %.2fKg \n", mediaP);
+  
+  mediaA = somaA / 1000;
+  printf("A média de altura é de %.2fm \n", mediaA);
+ 
+return 0;
+}
+
