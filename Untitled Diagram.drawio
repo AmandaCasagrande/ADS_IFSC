@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-09-25T20:02:11.578Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="Mi1kPnGhHFXvW2NxrX23" version="13.7.5" type="github">
+<mxfile host="app.diagrams.net" modified="2020-09-25T20:03:08.076Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.121 Safari/537.36" etag="PLxukzcxwldmeDwyQyT4" version="13.7.5" type="github">
   <diagram id="ahora-BXQ_pVMHsatNbe" name="Page-1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2031" dy="1089" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="dmRQjShE-WPzTf0DSA4U-89" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="dmRQjShE-WPzTf0DSA4U-1" target="dmRQjShE-WPzTf0DSA4U-88">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="dmRQjShE-WPzTf0DSA4U-1" value="Operação = Y" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+        <mxCell id="dmRQjShE-WPzTf0DSA4U-1" value="Entrada = Y?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="320" y="150" width="125" height="120" as="geometry" />
         </mxCell>
         <mxCell id="dmRQjShE-WPzTf0DSA4U-86" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;" edge="1" parent="1" source="dmRQjShE-WPzTf0DSA4U-2" target="dmRQjShE-WPzTf0DSA4U-1">
