@@ -1,0 +1,39 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valorA, valorB, valorC;
+  int auxiliar;
+  int originalA, originalB, originalC;
+  
+  printf("Digite três números: ");
+  scanf("%d %d %d", &valorA, &valorB, &valorC);
+  printf("\n");
+  
+  originalA = valorA;
+  originalB = valorB;
+  originalC = valorC;
+  
+  if (valorA >= valorB) {
+    auxiliar = valorA;
+    valorA = valorB;
+    valorB = auxiliar;
+  }
+  if (valorA >= valorC) {
+    auxiliar = valorA;
+    valorA = valorC;
+    valorC = auxiliar;
+  }
+  if (valorB >= valorC) {
+    auxiliar = valorB;
+    valorB = valorC;
+    valorC = auxiliar;
+  }
+  
+  printf("%d %d %d\n\n", valorA, valorB, valorC);
+  printf("%d %d %d", originalA, originalB, originalC);
+ 
+return 0;
+}
+
+

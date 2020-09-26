@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valorA, valorB, valorC, valorD;
+  
+  printf("Digite quatro valores:");
+  scanf("%d %d %d %d", &valorA, &valorB, &valorC, &valorD);
+  
+  if ((valorB > valorC) && (valorD > valorA) && (valorC + valorD > valorA + valorB) && (valorC > 0) && (valorD > 0)) {
+    printf("Valores aceitos.");
+  } else {
+    printf("Valores não aceitos.");
+  }
+ 
+return 0;
+}

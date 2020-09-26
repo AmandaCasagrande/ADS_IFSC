@@ -1,0 +1,39 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+float valorEntrada, totalImposto;
+float auxiliar, totalCalculado;
+ 
+printf("Digite o valor: ");
+scanf("%2f", &valorEntrada);
+ 
+auxiliar = 0;
+totalCalculado = 0;
+totalImposto = 0;
+ 
+if (valorEntrada <= 2000.00) {
+  printf("Isento");
+} else {
+
+ if (valorEntrada > 4500.00) {
+   auxiliar = valorEntrada - 4500.00;
+   totalImposto = auxiliar * 0.28;
+   totalCalculado = auxiliar;
+  }
+ if (valorEntrada > 3000.01) {
+   auxiliar = valorEntrada - 3000.01 - totalCalculado;
+   totalImposto = totalImposto + auxiliar * 0.18;
+   totalCalculado = totalCalculado + auxiliar;
+  }
+ if (valorEntrada > 2000.01) {
+   auxiliar = valorEntrada - 2000.01 - totalCalculado;
+   totalImposto = totalImposto + auxiliar * 0.08;
+   totalCalculado = totalCalculado + auxiliar;
+  }
+
+ printf("R$ %.2f", totalImposto);
+}
+ 
+return 0;
+}

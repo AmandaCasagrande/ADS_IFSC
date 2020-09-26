@@ -1,0 +1,26 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int horaInicio, horaFinal;
+  int tempoJogo;
+  
+  printf("Informe a hora inicial: ");
+  scanf("%d", &horaInicio);
+  printf("Informe a hora final: ");
+  scanf("%d", &horaFinal);
+  
+  if (horaFinal == horaInicio) {
+    tempoJogo = 24;
+  } else {
+  if (horaInicio > horaFinal) {
+    tempoJogo = (24 - horaInicio) + horaFinal;
+    } else {
+      tempoJogo = horaFinal - horaInicio;
+    }
+  }
+
+  printf("O JOGO DUROU %d HORA(S)", tempoJogo);
+  
+ return 0;
+}

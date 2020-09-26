@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main(void) {
+
+  float n1, n2, n3, n4;
+  float media, notaExame, mediaFinal;
+
+
+  printf("Digite quatro números: \n");
+  scanf("%f %f %f %f", &n1, &n2, &n3, &n4);
+
+
+  media = (n1 * 2 + n2 * 3 + n3 * 4 + n4 * 1) / 10;
+  printf("Média: %.1f \n", media);
+
+
+  if (media >= 7.0) {
+    printf("Aluno aprovado.");
+    return 0;
+  }
+
+  if (media < 5.0) {
+    printf("Aluno reprovado.");
+    return 0;
+  }
+
+  if (media > 5.0 && media < 6.9) {
+    printf("Aluno em exame. \n");
+    printf("Digite nota do exame: ");
+    scanf("%f", &notaExame);
+    mediaFinal = ((notaExame + media) / 2);
+  }
+
+  if (mediaFinal >= 5.0) {
+    printf("Aluno aprovado. \n");
+    printf("Media Final = %.1f", mediaFinal);
+  } else {
+    printf("Aluno reprovado.");
+    printf("Media Final: %.1f", mediaFinal);
+  }
+  
+return 0;
+}
