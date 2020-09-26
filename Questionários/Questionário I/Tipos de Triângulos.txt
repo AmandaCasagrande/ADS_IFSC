@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+
+  float auxiliar, valorA, valorB, valorC;
+  float potenciaA, potenciaB, potenciaC;
+
+
+  printf("Digite três números: ");
+  scanf("%f %f %f", &valorA, &valorB, &valorC);
+
+
+  if (valorA == 0 || valorB == 0 || valorC == 0 ){
+    printf("Valor inválido.");
+  }
+
+  if (valorA < valorB) {
+    auxiliar = valorA;
+    valorA = valorB;
+    valorB = auxiliar;
+  }
+
+  if (valorA < valorC) {
+    auxiliar = valorA;
+    valorA = valorC;
+    valorC = auxiliar;
+  }
+
+  if (valorB < valorC) {
+    auxiliar = valorB;
+    valorB = valorC;
+    valorC = auxiliar;
+  }
+  
+  potenciaA = pow(valorA, 2);
+  potenciaB = pow(valorB, 2);
+  potenciaC = pow(valorC, 2);
+
+  if (valorA >= valorB + valorC) {
+  printf("Não forma triângulo.\n");
+  return 0;
+  }
+
+  if (potenciaA == potenciaB + potenciaC) {
+  printf("Triângulo Retângulo.\n");
+  }
+
+  if (potenciaA > potenciaB + potenciaC) {
+  printf("Triângulo Obtusângulo.\n");
+  }
+
+  if (potenciaA < potenciaB + potenciaC) {
+  printf("Triângulo Acutângulo.\n");
+  }
+
+  if (valorA == valorB && valorA == valorC && valorB == valorC){
+  printf("Triângulo Equilátero.\n");
+  }
+
+  if (valorA == valorB || valorA == valorC || valorB == valorC) {
+  printf("Triângulo Isósceles.\n");
+  }
+
+return 0;
+}

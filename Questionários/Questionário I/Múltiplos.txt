@@ -1,0 +1,26 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valorA, valorB;
+  int resto;
+  float divisao;
+  
+  printf("Digite dois números:");
+  scanf("%d %d", &valorA, &valorB);
+  
+  if (valorA > valorB) {
+    resto = valorA % valorB;;
+  } else {
+    resto = valorB % valorA;
+  }
+  
+  if (resto == 0) {
+    printf("São múltiplos.");
+  } else {
+    printf("Não múltiplos.");
+  }
+ 
+return 0;
+}
+

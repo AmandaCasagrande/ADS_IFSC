@@ -1,0 +1,29 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float valorA, valorB, valorC;
+  float perimetroTriangulo, areaTrapezio;
+  
+  printf("Digite três valores: ");
+  scanf("%f %f %f", &valorA, &valorB, &valorC);
+  
+  perimetroTriangulo = valorA + valorB + valorC;
+  areaTrapezio = ((valorA + valorB) * valorC) / 2;
+  
+  if (valorB - valorC < valorA && valorA < valorB + valorC ) {
+    printf("Perímetro = %.*f", 1, perimetroTriangulo);
+    } else {
+    if (valorA - valorC < valorB && valorB < valorA + valorC) {
+      printf("Perímetro = %.*f", 1, perimetroTriangulo);
+    } else {
+      if (valorA - valorB < valorC && valorC < valorA + valorB) {
+        printf("Perímetro = %.*f",1, perimetroTriangulo);
+      } else {
+        printf("Área = %.*f ",1, areaTrapezio);
+      }
+    }
+  }  
+ 
+return 0;
+}

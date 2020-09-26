@@ -1,0 +1,31 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float valor1, valor2;
+  
+  printf("Digite valor de x e de y: ");
+  scanf("%f %f", &valor1, &valor2);
+  
+  if (valor1 == 0 && valor2 == 0) {
+  printf("Origem");
+  } else {
+    if (valor1 > 0 && valor2 > 0) {
+      printf("Quadrante I");
+    } else {
+      if (valor1 < 0 && valor2 > 0) {
+        printf("Quadrante II");
+      } else {
+        if (valor1 < 0 && valor2 < 0) {
+          printf("Quadrante III");
+        } else {
+          if (valor1 > 0 && valor2 < 0) {
+            printf("Quadrante IV");
+          }
+        }
+      }
+    }
+  }
+ 
+return 0;
+}

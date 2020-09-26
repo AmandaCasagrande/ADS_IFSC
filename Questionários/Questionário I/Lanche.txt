@@ -1,0 +1,37 @@
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int codigoItem, qntdItem;
+  float valorProduto, valorConta;
+  
+  printf("Digite o código e a quantidade do item: ");
+  scanf("%d %d", &codigoItem, &qntdItem);
+  
+  switch (codigoItem){
+    case 1:
+      valorProduto = 4.00;
+      break;
+    case 2:
+      valorProduto = 4.50;
+      break;
+    case 3:
+      valorProduto = 5.00;
+      break;
+    case 4:
+      valorProduto = 2.00;
+      break;
+    case 5:
+      valorProduto = 1.50;
+      break;
+    default:
+    printf("Código Inválido. Tente Novamente.");
+  }
+  
+  valorConta = valorProduto * qntdItem;
+  
+  printf("Total: R$ %2.f", valorConta);
+ 
+return 0;
+}
