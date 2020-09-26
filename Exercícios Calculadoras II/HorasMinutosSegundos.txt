@@ -6,3 +6,44 @@ segundos existem nesse valor.
 
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+
+  // 1h = 3600s;
+  // 1min = 60s;
+
+  // 25465 / 3600s = 7h
+  // 7h x 3600 = 25.200s
+  // 25.2465 -  25.200 = 265s
+  // 265s / 60 = 4min
+
+  // 4 * 60 = 240s;
+  // 265 - 240 = 25s;
+
+
+  float vlrSegundos;
+  float vlrHoras;
+  float vlrDiferenca;
+  float vlrMinutos;
+  int vlrHorasInteiro;
+  int vlrMinutosInteiro;
+
+  printf("Digite um valor em segundos:");
+  scanf("%f", &vlrSegundos);
+
+  vlrHoras = vlrSegundos / 3600; //1h = 3600s;
+  printf("Horas = %2.f \n", vlrHoras); //25465 / 3600s = 7h
+
+  vlrHorasInteiro = vlrHoras;
+  vlrDiferenca = vlrSegundos - (vlrHorasInteiro * 3600); // 25.2465 -  (7h x 3600 = 25.200s)) = 265s
+  vlrMinutos = vlrDiferenca / 60; // 265s / 60 = 4min
+  printf("Minutos = %2.f \n", vlrMinutos);
+
+  vlrMinutosInteiro = vlrMinutos;
+  vlrDiferenca = vlrSegundos - (vlrHorasInteiro * 3600) - (vlrMinutosInteiro * 60); // 25.2465 - (7h x 3600) - (4 x 60) = 25
+  printf("Segundos = %2.f", vlrDiferenca);
+
+  return 0;
+}

@@ -5,3 +5,22 @@ Escreva um algoritmo para ler o preço do litro da gasolina e o valor do pagamen
 e exibir quantos litros ele conseguiu colocar no tanque. 
 
 */
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float valorLitro;
+  printf("Qual o valor por litro da gasolina?\n");
+  scanf("%f", &valorLitro);
+  
+  float montante;
+  printf("Qual o valor total do pagamento?\n");
+  scanf("%f", &montante);
+  
+  float qntdLitros;
+  qntdLitros = montante / valorLitro;
+  printf("Total de litros abastecidos é de %2.f litros.", qntdLitros);
+ 
+return 0;
+}

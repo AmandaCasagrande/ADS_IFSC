@@ -4,3 +4,26 @@
 seu perímetro. Use as fórmulas: A = r² e P = 2r. 
 
 */
+
+
+#include <stdio.h>
+#include <math.h>
+ 
+int main(void) {
+ 
+  float pi = 3.14;
+  float raio;
+  printf("Digite o raio da cirunferência: \n");
+  scanf("%f", &raio);
+  
+  float area;
+  float perimetro;
+  
+  perimetro = (2 * pi) * raio;
+  printf("O perímetro da circunferência é de: %2.f \n", perimetro);
+  
+  area = pi * pow(raio, 2);
+  printf("A área do círculo é de: %2.f", area);
+ 
+return 0;
+}

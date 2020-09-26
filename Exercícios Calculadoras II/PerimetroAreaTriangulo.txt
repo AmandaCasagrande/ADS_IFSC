@@ -4,3 +4,24 @@ Perímetro = 2 * (altura + base)
 Área = base * altura
 
 */
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float base;
+  scanf("%f", &base);
+  
+  float altura;
+  scanf("%f", &altura);
+  
+  float perimetro;
+  perimetro = 2 * (altura + base);
+  printf("O perímetro é de: %.2f metros. \n\n", perimetro);
+  
+  float area;
+  area = base*altura;
+  printf("A área é de %.2f metros quadrados.", area);
+ 
+return 0;
+}

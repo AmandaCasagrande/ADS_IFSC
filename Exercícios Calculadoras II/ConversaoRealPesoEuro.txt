@@ -5,3 +5,26 @@ um euro vale R$ 4,2100 e um peso argentino R$ 0,087.
 
 
 */
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float dolar = 3.8000;
+  float euro = 4.2100;
+  float pesoArgentino = 0.087;
+  
+  float real;
+  scanf("%f", &real);
+  
+  float conversaoDolar = real * dolar;
+  printf("O valor em Dólar é de: %.2f\n", dolar);
+  
+  float conversaoEuro = real * euro;
+  printf("O valor em Euro é de: %.2f\n", euro);
+  
+  float conversaoPesoArgentino = real * pesoArgentino;
+  printf("O valor em Peso Argentino é de: %.2f", pesoArgentino);
+ 
+return 0;
+}

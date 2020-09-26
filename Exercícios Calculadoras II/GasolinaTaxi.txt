@@ -10,3 +10,30 @@ faz com um tanque cheio.
 
 
 */
+#include <stdio.h>
+
+int main(void) {
+
+  float kmAntes;
+  float kmDepois;
+  float litrosGastos;
+  float capacidade;
+
+  printf("Km Antes:");
+  scanf("%f", &kmAntes);
+
+  printf("Km Depois:" );
+  scanf("%f", &kmDepois);
+
+  printf("Litros gastos: ");
+  scanf("%f", &litrosGastos);
+
+  printf("Capacidade do tanque: ");
+  scanf("%f", &capacidade);
+
+  float kmTanqueCheio;
+  kmTanqueCheio = ((kmDepois - kmAntes) * capacidade) / litrosGastos;
+  printf("%f", kmTanqueCheio);
+
+  return 0;
+}

@@ -7,3 +7,26 @@ valor do aumento e do novo salário.
 
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+  float salario;
+  printf("Digite seu salário: ");
+  scanf("%f", &salario);
+
+  float porcentagem, p;
+  printf("Digite a porcentagem de aumento: ");
+  scanf("%f", &porcentagem);
+  p = porcentagem / 100;
+
+  float novoSalario;
+  float valorAumento;
+  novoSalario = salario * (1 + p);
+  valorAumento = novoSalario - salario;
+
+  printf("Seu novo salário é de %2.f reais. \n", novoSalario);
+  printf("Seu salário aumentou em %2.f reais.", valorAumento);
+
+  return 0;
+}

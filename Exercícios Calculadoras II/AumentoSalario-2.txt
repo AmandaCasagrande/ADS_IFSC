@@ -6,6 +6,30 @@ aumento, desconte 10% de impostos. Imprima o
 salário inicial, o salário com o aumento e o salário
 líquido (com desconto). 
 
-
-
 */
+
+#include <stdio.h>
+
+int main(void) {
+
+  float salarioInicial, salarioAumento, salarioLiquido;
+  float porcentagem = 20;
+  float p;
+  float desconto = 10; 
+  float d;
+
+  printf("Digite o salário: ");
+  scanf("%f", &salarioInicial);
+
+  printf("Salário Inicial: %2.f reais. \n", salarioInicial);
+
+  p = porcentagem/ 100;
+  salarioAumento = salarioInicial * (1 + p);
+  printf("Salário com aumento: %2.f reais. \n", salarioAumento);
+
+  d = desconto / 100;
+  salarioLiquido =  salarioAumento * (1 - d);
+  printf("Salário Líquido: %2.f reais. \n", salarioLiquido);
+
+  return 0;
+}

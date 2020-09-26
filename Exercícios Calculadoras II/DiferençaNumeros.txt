@@ -3,3 +3,18 @@
 apresente a diferença do primeiro pelo segundo número digitado. 
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+
+  int numero1;
+  scanf("%d",&numero1);
+  int numero2;
+  scanf("%d",&numero2);
+  
+  int calculo_diferenca = numero1 - numero2;
+  printf("O resultado é: %d", calculo_diferenca);
+  
+ return 0;
+}

@@ -7,3 +7,21 @@ A. Após a troca, o algoritmo deve exibir os novos
 valores de A e B.
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+
+  float valorA;
+  printf("Digite valor de A: ");
+  scanf("%f", &valorA);
+
+  float valorB;
+  printf("Digite valor de B: ");
+  scanf("%f", &valorB);
+
+  printf("A é igual a%2.f. \n", valorB);
+  printf("B é igual a%2.f.", valorA);
+
+  return 0;
+}

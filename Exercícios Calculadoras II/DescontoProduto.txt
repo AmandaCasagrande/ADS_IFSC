@@ -7,3 +7,26 @@ valor do desconto e do novo valor do produto.
 
 
 */
+
+#include <stdio.h>
+
+int main(void) {
+
+  float valorProduto, valorNovo;
+  printf("Digite o valor do produto: ");
+  scanf("%f", &valorProduto);
+
+  float porcentagem, p;
+  printf("Digite a porcentagem de desconto: ");
+  scanf("%f", &porcentagem);
+  p = porcentagem / 100;
+
+  valorNovo = valorProduto * (1 - p);
+  printf("O novo valor do produto é de: %2.f reais. \n", valorNovo);
+
+  float valorDesconto;
+  valorDesconto = valorProduto - valorNovo;
+  printf("O desconto é de: %2.f reais. \n", valorDesconto);
+
+  return 0;
+}
