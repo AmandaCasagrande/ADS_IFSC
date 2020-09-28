@@ -1,0 +1,43 @@
+/*
+
+6. Consulta 2
+Construa um algoritmo que permita o cadastro de 100 códigos numéricos. 
+Após o cadastro, o sistema deve permitir a consulta ao cadastro, onde o usuário digitará 
+um código e o sistema informará se este código está ou não cadastrado. 
+Além disso, o sistema deve informar a posição do cadastro.
+
+*/
+
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int code, codigos[10];
+  int posicao, cadastrado = 0;
+  
+  printf("Cadastre os códigos: \n");
+  
+  for (int x = 0; x <= 9; x++){
+    scanf("%d", &codigos[x]);
+  }
+  
+  printf("\n\nConsulte o código: ");
+  scanf("%d", &code);
+  
+  for (int x = 0; x <= 9; x++){
+    if (code == codigos[x]){
+      cadastrado = 1;
+      posicao = x;
+    }
+  }
+  
+  if (cadastrado == 1){
+    printf("\n\nNúmero cadastrado.\n");
+    printf("A posição do cadastro é: %d", posicao);
+  } else {
+    printf("\n\nNúmero não cadastrado.");
+  }
+ 
+ return 0;
+}

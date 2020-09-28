@@ -1,0 +1,48 @@
+/*
+
+8. Diário de classe
+Construa um algoritmo que permita cadastrar o nome e as notas obtidas em
+3 provas pelos 30 alunos de uma turma de Programação. 
+O cadastro deve ser feito por aluno e na seguinte ordem: nome, nota1, nota2 e nota3.
+Em seguida, o algoritmo deve gerar um vetor com a média das notas de cada aluno. 
+Finalmente, o algoritmo deve informar o nome, as 3 notas e a média de cada aluno.
+
+Exemplo de Saída:
+Nome  N1  N2 N3  Media
+Téu 	5	6	7	6.0
+Bem	7   6 	4	5.7
+…
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+ 
+  char nome[3][10];
+  float nota1 [30], nota2 [30], nota3[30];
+  float media[30];
+  
+  printf("\n\nCadastre os alunos: ");
+  
+  for (int x = 0; x <= 29; x++){
+    printf("\nDigite nome do aluno(a): ");
+    scanf(" \n%s", nome[x]);
+    printf("\nDigite a 1° nota do aluno(a): ");
+    scanf(" %f", &nota1[x]);
+    printf("Digite a 2° nota do aluno(a): ");
+    scanf(" %f", &nota2[x]);
+    printf("Digite a 3° nota do aluno(a): ");
+    scanf(" %f", &nota3[x]);
+
+    media[x] = ((nota1[x] + nota2[x] + nota3[x]) / 3.0);
+  }
+  
+  printf("\n\nNOME N1 N2  MÉDIA\n");
+  
+  for (int x = 0; x <= 29; x++){
+    printf("%s %.1f %.1f %.1f %.1f \n\n", nome[x], nota1[x], nota2[x], nota3[x], media[x]);
+  }
+  
+return 0;
+}

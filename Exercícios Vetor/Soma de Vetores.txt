@@ -1,0 +1,33 @@
+/*
+
+14. Soma de vetores
+Construa um algoritmo que leia dois vetores de inteiros A e B, cada um com 10 elementos.
+Em seguida, some o vetor A e B (A+B), armazene o resultado no vetor C e exiba o vetor C.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int v1[10], v2[10], vC[10];
+  
+  printf("Digite os valores de V1: \n");
+
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &v1[9]);
+    v1[x] = x + 1;
+  }
+  
+  printf("Digite os valores de V2: \n");
+
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &v2[9]);
+    v2[x] = x + 1;
+  }
+  
+  vC[9] = v1[9] + v2[9];
+  printf("%d \n", vC[9]);
+
+return 0;
+}

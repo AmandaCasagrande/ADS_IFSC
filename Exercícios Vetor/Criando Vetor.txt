@@ -1,0 +1,33 @@
+/*
+
+7. Criando vetor
+Construa um algoritmo que permita criar um vetor de inteiros de 20 posições: 
+as 10 primeiras são números informados pelo usuário, e as 10 seguintes são os mesmos números 
+em ordem inversa. Após isso, imprima o vetor obtido.
+
+*/
+
+#include <stdio.h>
+ 
+int vetor[20];
+int y = 19;
+ 
+int main(void) {
+ 
+  for (int x = 0; x <= 9; x++) {
+    scanf("%d", &vetor[x]);
+    vetor[x + y] = vetor[x];
+    y = y - 2;
+  }
+  
+  printf("\n\n");
+  printf("V = {");
+
+  for (int x = 0; x <= 19; x++){
+    printf("%d,", vetor[x]);
+  }
+  
+  printf("}");
+
+  return 0;
+}

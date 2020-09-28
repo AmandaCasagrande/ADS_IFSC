@@ -1,0 +1,35 @@
+/*
+
+13. Média 1
+Faça um algoritmo que calcule a média dos valores do vetor
+int A[9]={9, 8, 6, 7, 5, 9, 6, 4, 8};
+e mostre quantos valores estão acima da média.
+
+*/
+
+#include <stdio.h>
+
+int main(void){
+
+  int A[9]={9, 8, 6, 7, 5, 9, 6, 4, 8};
+  int media, soma = 0, contador = 0;
+  
+  for (int x = 0; x <= 8; x++){
+    soma = soma + A[x];
+  }
+  
+  media = soma/ 9;
+  printf("A média do vetor é de: %d \n", media);
+  
+  for (int x = 0; x <= 8; x++) {
+    if (A[x] > media) {
+      contador = contador + 1;
+    }
+  }
+  
+  printf("%d posições são maiores que a média", contador);
+ 
+return 0;
+}
+ 
+

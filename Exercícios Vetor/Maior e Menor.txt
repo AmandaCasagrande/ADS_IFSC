@@ -1,0 +1,30 @@
+/*
+12. Maior e menor
+Construa um algoritmo para encontrar o maior e o menor elemento de um vetor de tamanho N. 
+(Atenção: N deve ser informado no início do algoritmo)
+
+*/
+
+#include <stdio.h>
+ 
+int main(void){
+ 
+  int nMenor = 50, nMaior = 0;
+  int N[10]= {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  
+  for (int x = 0; x <= 9; x++){
+
+    if (N[x] > nMaior) {
+      nMaior = N[x];
+    }
+    
+    if (N[x] < nMenor) {
+      nMenor = N[x];
+    } 
+  }
+
+  printf("O maior número é: %d \n", nMaior);
+  printf("O menor número é: %d", nMenor);
+
+return 0;
+}

@@ -1,0 +1,33 @@
+/*
+
+4. Altura média
+Construa um algoritmo que leia a altura de 30 pessoas e
+calcule a altura média dessas pessoas. 
+Após isso, exibir a quantidade de pessoas que estão acima da altura média.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float altura[30];
+  float media, soma = 0;
+  
+  printf("Digite a altura: \n");
+  
+  for (int x = 0; x < 30; x++){
+    scanf("%f", &altura[x]);
+    soma = soma + altura[x];
+  }
+  
+  media = soma / 30;
+  
+  for (int x = 0; x < 30; x++){
+    if (altura[x] > media){
+    printf("%.2f", altura[x]);
+    }
+  }
+ 
+ return 0;
+}

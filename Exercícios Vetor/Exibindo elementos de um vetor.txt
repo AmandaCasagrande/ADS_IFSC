@@ -1,0 +1,24 @@
+/*
+9. Exibindo elementos de um vetor
+Construa um algoritmo que leia 50 números e depois exiba-os na ordem inversa
+de que foram lidos.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int vetor[50];
+  printf("Digite 50 números: ");
+  
+  for (int x = 0; x <= 49; x ++){
+    scanf("%d", &vetor[x]);
+  }
+  
+  for (int x = 49; x >= 0; x --){
+    printf("\n%d", vetor[x]);
+  }
+  
+ return 0;
+}

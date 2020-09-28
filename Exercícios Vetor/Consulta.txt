@@ -1,0 +1,34 @@
+/*
+
+5. Consulta
+Faça um algoritmo que leia um número e verifique se esse número pertence ao 
+vetor int B[8] = {12, 6, 8, 10, 15, 20, 17, 9};. Se o número lido pertencer ao vetor, 
+imprima o número lido e a sua posição, senão imprima a mensagem"X não encontrado". 
+(X corresponde ao número lido)
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int B[8] = {12, 6, 8, 10, 15, 20, 17, 9};
+  int numero, flag = 1;
+  
+  printf("Digite um número: ");
+  scanf("%d", &numero);
+  
+  for (int x = 0; x < 7; x++){
+    if (numero == B[x]){
+      printf("Número: %d \n", numero);
+      printf("Posição: %d \n", x);
+      flag = 0;
+    }
+  }
+  
+  if (flag == 1){
+    printf("%d não encontrado.", numero);
+  }
+  
+ return 0;
+}

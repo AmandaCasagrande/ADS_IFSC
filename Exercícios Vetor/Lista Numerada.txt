@@ -1,0 +1,28 @@
+/*
+
+11. Lista numerada
+Faça um algoritmo que leia a altura de 50 atletas, armazenando-os em um vetor. A seguir, imprima uma relação numerada das alturas. 
+Exemplo de saida:
+Altura  1:  1.86 m 
+Altura  2: 1.70 m ...
+...
+Altura 50: 1.90 m
+
+*/
+
+#include <stdio.h>
+int main(void) {
+
+  float altura[5];
+  printf("Digite a altura dos atletas: \n");
+
+  for (int x = 1; x < 5; x++){
+    scanf(" %f\n\n", &altura[x]);
+  }
+  
+  for (int x = 1; x <= 5; x++){
+    printf("Altura %d: %.2f\n",x, altura[x]);
+  }
+ 
+return 0;
+}

@@ -1,0 +1,67 @@
+/*
+10. Lançamento de dado
+Faça um algoritmo que simule um lançamento de dados.
+Lance o dado 100 vezes e armazene os resultados em um vetor.
+Depois, mostre quantas vezes saiu cada valor.
+
+Use a função rand() para carregar os números aleatórios.
+Para isso inclua biblioteca stdlib (#include <stdlib.h>).
+
+Para gerar números de 1 a 6 use: rand()%6+1
+Exemplo: vetor[x] = rand()%6+1;
+
+Use o comando srand(time(NULL)) da biblioteca #include <time.h>,
+antes de usar rand(), para inicializar o gerador de números aleatórios
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+  int lancamento[100];
+  int dado[6];
+  int cont1 = 0, cont2 = 0, cont3 = 0, cont4 = 0, cont5 = 0, cont6 = 0;
+  
+  srand(time(NULL));
+  
+  for(int x = 0; x <= 99; x++){
+    dado[x] = rand()%6+1;
+    switch (dado[x]){
+
+      case 1: 
+        cont1 = cont1 + 1;
+      break;
+
+      case 2:
+        cont2 = cont2 + 1;
+      break;
+
+      case 3:
+        cont3 = cont3 + 1;
+      break;
+
+      case 4:
+        cont4 = cont4 + 1;
+      break;
+
+      case 5: 
+        cont5 = cont5 + 1;
+      break;
+
+      case 6:
+        cont6 = cont6 + 1;
+      break;
+    }
+  }
+  
+  printf("O número 1 aparece %d vezes.\n", cont1);
+  printf("O número 2 aparece %d vezes.\n", cont2);
+  printf("O número 3 aparece %d vezes.\n", cont3);
+  printf("O número 4 aparece %d vezes.\n", cont4);
+  printf("O número 5 aparece %d vezes.\n", cont5);
+  printf("O número 6 aparece %d vezes.\n", cont6);
+
+return 0;
+}

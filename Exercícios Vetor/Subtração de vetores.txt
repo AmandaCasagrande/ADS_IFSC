@@ -1,0 +1,32 @@
+/*
+15. Subtração de vetores
+Construa um algoritmo que leia dois vetores de inteiros A e B, cada um com 10 elementos.
+Em seguida, subtraia o vetor B de A (A-B), armazene o resultado no vetor C e exiba o vetor C.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int vetorA[10], vetorB[10], vetorC[10];
+  
+  printf("Digite os valores de V1: \n");
+  
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorA[9]);
+    vetorA[x] = x + 1;
+  }
+  
+  printf("Digite os valores de V2: \n");
+  
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorB[9]);
+    vetorB[x] = x + 1;
+  }
+  vetorC[9] = vetorA[9] - vetorB[9];
+  
+  printf("%d \n", vetorC[9]);
+
+ return 0;
+}
