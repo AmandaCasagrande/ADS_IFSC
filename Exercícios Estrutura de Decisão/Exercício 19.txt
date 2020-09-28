@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float auxiliar, n1, n2, n3;
+  printf("Digite três números: ");
+  scanf("%f %f %f", &n1, &n2, &n3);
+  
+  if (n1 > n2) {
+    auxiliar = n1;
+    n1 = n2;
+    n2 = auxiliar;
+  }
+  
+  if (n1 > n3) {
+    auxiliar = n1;
+    n1 = n3;
+    n3 = auxiliar;
+  }
+  
+  if (n2 > n3) {
+    auxiliar = n2;
+    n2 = n3;
+    n3 = auxiliar;
+  }
+  
+  printf("%2.f %2.f %2.f", n1, n2, n3);
+  
+ return 0;
+}

@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+ 
+  float x1, x2, y1, y2;
+  float formula_Distancia, raiz_Quadrada, resposta;
+  
+  printf("Digite os dois valores para X1 e X2, respectivamente: ");
+  scanf("%f %f", &x1, &x2);
+  printf("Digite os dois valores para Y1 e Y2, respectivamente: ");
+  scanf("%f %f", &y1, &y2);
+  
+  formula_Distancia = pow(x2 - x1, 2) + pow(y2 - y1 , 2);
+  raiz_Quadrada = sqrtf(formula_Distancia);
+  resposta = raiz_Quadrada;
+  printf("A distância entre os dois pontos é de: %2.f", resposta);
+  
+return 0;
+}

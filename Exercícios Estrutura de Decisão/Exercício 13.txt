@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void) {
+  float numero1, numero2;
+  
+  printf("Digite dois números: ");
+  scanf("%f %f", &numero1, &numero2);
+  
+  if (numero1 > numero2) {
+    printf("O primeiro número é maior");
+  } else {
+    if (numero1 == numero2) {
+      printf("Os números são iguais.");
+    } else {
+      printf("O segundo número é maior.");
+    }
+  }
+  
+return 0;
+}

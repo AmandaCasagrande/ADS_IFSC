@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <math.h>
+ 
+int main(void) {
+ 
+  int populacaoInicial, numeroInfectados, dias;
+  float taxaCrescimento, porcentagem;
+  
+  printf("Indique o número da população infectada: \n");
+  scanf("%d", &populacaoInicial);
+
+  printf("Indique a taxa de crescimento: \n");
+  scanf("%f", &taxaCrescimento);
+
+  printf("Indique a quantidade de dias: \n");
+  scanf("%d", &dias);
+  
+  porcentagem = taxaCrescimento / 100;
+  numeroInfectados = populacaoInicial * pow((1 + porcentagem), (dias));
+  
+  printf("Número infectados: %d", numeroInfectados);
+  
+  return 0;
+}

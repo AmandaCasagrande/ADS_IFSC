@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void) {
+  float ano1, ano2;
+  
+  printf("Digite dois anos de nascimento: ");
+  scanf("%f %f", &ano1, &ano2);
+  
+  if (ano1 > ano2) {
+    printf("A segunda pessoa é mais velha.");
+  } else {
+    if (ano1 == ano2) {
+      printf("Tem a mesma idade.");
+    } else {
+      printf("A primeira pessoa é mais velha.");
+    }
+  }
+ 
+return 0;
+}

@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(void) {
+ 
+  int entrada, belaVista, figueira, staTerezinha;
+  
+  belaVista = 1;
+  figueira = 2;
+  staTerezinha = 3;
+  
+  printf("Digite o código da linha: ");
+  scanf("%d", &entrada);
+  
+  if (entrada == belaVista) {
+    printf("Linha Bela Vista.");
+  } else {
+    if (entrada == figueira) {
+      printf("Linha Figueira.");
+    } else {
+      if (entrada == staTerezinha) {
+        printf("Linha Santa Terezinha.");
+      } else {
+        printf("Código Inexistente.");
+      }
+    }
+  }
+  
+  return 0;
+}

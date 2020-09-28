@@ -1,0 +1,16 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int anoNascimento;
+  printf("Digite seu ano de nascimento:");
+  scanf("%d", &anoNascimento);
+  
+  if (anoNascimento >=1990  && anoNascimento <= 1999) {
+    printf("Você nasceu na década de 90.");
+  } else {
+    printf("Você não nasceu na década de 90.");
+  }
+
+ return 0;
+}

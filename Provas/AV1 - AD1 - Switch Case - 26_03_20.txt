@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+ 
+int main(void) {
+ 
+  int numeroUsuario, numeroAleatorio;
+  
+  srand(time(NULL));
+  numeroAleatorio = rand()%3+1;
+  
+  printf("Digite um número entre 1 e 3: ");
+  scanf("%d", &numeroUsuario);
+  
+  switch (numeroUsuario) {
+
+    case 1:
+      switch (numeroAleatorio){
+      case 1:
+        printf("Empate! Você jogou Pedra. Computador jogou Pedra.");
+      break;
+      case 2:
+        printf("Computador Ganhou! Você jogou Pedra. Computador jogou Papel.");
+      break;
+      case 3:
+        printf("Você ganhou! Você jogou Pedra. Computador jogou Tesoura.");
+      break;
+    }
+  break;
+
+    case 2:
+      switch (numeroAleatorio){
+      case 1:
+        printf("Você ganhou! Você jogou Papel. Computador jogou Pedra.");
+      break;
+      case 2:
+        printf("Empate! Você jogou Papel. Computador jogo Papel.");
+      break;
+      case 3:
+        printf("Computador ganhou! Você jogou Papel. Computador jogou Tesoura.");
+      break;
+    }
+  break;
+
+    case 3:
+      switch (numeroAleatorio){
+        case 1:
+          printf("Computador ganhou! Você jogou Tesoura. Computador jogou Pedra.");
+         break;
+        case 2:
+          printf("Você ganhou! Você jogou Tesoura. Computador jogou Papel.");
+        break;
+        case 3:
+          printf("Empate! Você jogou Tesoura. Computador jogou Tesoura");
+        break;
+      }
+      break;
+    default:
+  printf("Número inválido. Tente novamente.");
+  break;
+  }
+ 
+return 0;
+}

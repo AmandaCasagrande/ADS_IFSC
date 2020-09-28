@@ -1,0 +1,17 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float valorCompra, valorPagar;
+  printf("Digite o valor da compra: ");
+  scanf("%f", &valorCompra);
+  
+  if (valorCompra > 200) {
+    valorPagar = valorCompra - (valorCompra * 0.15);
+    printf("O valor a pagar é de %2.f reais.", valorPagar);
+  } else {
+    printf("Valor de compra é de %2.f reais.", valorCompra);
+  }
+ 
+return 0;
+}

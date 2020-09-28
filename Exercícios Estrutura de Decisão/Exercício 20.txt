@@ -1,0 +1,29 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int validadeProduto, dia1, mes1, ano1;
+  int dataHoje, dia2, mes2, ano2;
+  
+  printf("Digite a validade do produto: ");
+  scanf("%d %d %d", &dia1, &mes1, &ano1);
+  
+  printf("Digite a data de hoje: ");
+  scanf("%d %d %d", &dia2, &mes2, &ano2);
+  
+  if (ano2 <= ano1) {
+    if (mes2 <= mes1) {
+      if (dia2 <= dia1) {
+        printf("Produto em validade.");
+      } else {
+        printf("Produto vencido.");
+      }
+      } else {
+        printf("Produto vencido.");
+      }
+    } else {
+    printf("Produto vencido.");
+  }
+  
+return 0;
+}

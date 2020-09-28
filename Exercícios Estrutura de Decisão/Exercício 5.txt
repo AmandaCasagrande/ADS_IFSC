@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main(void) {
+ 
+  int areaFace, areaTotalFace, perimetroFace, somaArestas, volume;
+  int lado;
+  
+  printf("Digite o valor do lado do cubo:");
+  scanf("%d", &lado);
+  
+  areaFace = pow(lado, 2);
+  areaTotalFace = areaFace * 6;
+  perimetroFace = lado * 4;
+  somaArestas = lado *12;
+  volume = areaFace * lado;
+  
+  printf("%d %d %d %d %d", areaFace, areaTotalFace,
+  perimetroFace, somaArestas, volume);
+  
+ return 0;
+}

@@ -1,0 +1,21 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int diaSemana;
+  
+  printf("Digite o dia da semana:");
+  scanf("%d", &diaSemana);
+  
+  if (diaSemana < 1 || diaSemana > 7){
+    printf("Número não corresponde a dia da semana.");
+  } else {
+    if (diaSemana == 1 || diaSemana == 7){
+      printf("Fim de semana.");
+    } else {
+      printf("Dia útil.");
+    }
+  }
+ 
+return 0;
+}

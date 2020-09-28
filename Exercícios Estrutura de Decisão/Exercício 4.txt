@@ -1,0 +1,23 @@
+#include <stdio.h>
+ 
+int main(void) {
+  float salarioBruto, horasSemana, horasExtras;
+  float horasTrabalhadasMes, valorHora, valorExtras, somaAdicional, somaRecebido;
+
+  printf("Digite o salário bruto, horas trabalhadas/semana e horas extras: ");
+  scanf("%f %f %f", &salarioBruto, &horasSemana, &horasExtras);
+
+  horasTrabalhadasMes =  horasSemana * 5;
+  valorHora = salarioBruto / horasTrabalhadasMes;
+  valorExtras = salarioBruto * horasExtras;
+  somaAdicional = (salarioBruto + valorHora) * 0.5;
+  somaRecebido = (salarioBruto + valorHora) + somaAdicional;
+  
+  printf("Valor a ser recebido: %2.f", somaRecebido);
+  printf("%f",horasTrabalhadasMes);
+  printf("%f", valorHora);
+  printf("%f", horasExtras);
+  printf("%f", somaRecebido);
+ 
+ return 0;
+}

@@ -1,0 +1,30 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float nota1, nota2, nota3, frequencia, mediaFinal;
+  
+  printf("Digite três notas do aluno(a): ");
+  scanf("%f %f %f", &nota1, &nota2, &nota3);
+  
+  printf("Digite o percentual de frequência: ");
+  scanf("%f", &frequencia);
+  
+  mediaFinal = (nota1 + nota2 + nota3) / 3;
+  
+  if (mediaFinal >= 6 && frequencia >= 75) {
+  printf("Aprovado!");
+  } else {
+    if (frequencia >= 75) {
+      printf("Reprovado por média.");
+    } else {
+      if (mediaFinal < 6) {
+        printf("Reprovado por média e falta.");
+      } else {
+        printf("Reprovado por falta.");
+      }
+    }
+  }
+ 
+  return 0;
+}

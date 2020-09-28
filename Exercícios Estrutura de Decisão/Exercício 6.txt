@@ -1,0 +1,22 @@
+#include <stdio.h>
+ 
+int main(void) {
+  int velocidade;
+  float valorMulta;
+
+  printf("Digite a velocidade: ");
+  scanf("%d", &velocidade);
+  
+  valorMulta = (10 * (velocidade - 60));
+  
+  if (velocidade > 60) {
+    printf("Multado. \n");
+    printf("O valor da multa é de %2.f reais.", valorMulta);
+  }
+  
+  if (velocidade <= 60) {
+    printf("Não multado.");
+  }
+  
+ return 0;
+}

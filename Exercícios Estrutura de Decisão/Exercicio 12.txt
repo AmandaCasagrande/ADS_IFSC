@@ -1,0 +1,20 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float consumo, formula1, formula2;
+  printf("Digite valor de consumo: ");
+  scanf("%f", &consumo);
+ 
+  if (consumo <= 10) {
+    formula1 = 15 * consumo;
+    printf("O valor a pagar é de %2.f reais.", formula1);
+  }
+
+  if (consumo > 10) {
+    formula2 = (15 * consumo) + 20;
+    printf("O valor a pagar é de %2.f reais.", formula2);
+  }
+
+return 0;
+}

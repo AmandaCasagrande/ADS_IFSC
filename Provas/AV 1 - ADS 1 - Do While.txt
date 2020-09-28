@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main(void) {
+  int numerador1, denominador1, numerador2, denominador2;
+  float a, b, resultado;
+  char operacao, entrada;
+  
+  do {
+  
+    printf("Digite numerador e denominador da primeira fração: \n");
+    scanf(" %d", &numerador1);
+    scanf(" %d", &denominador1);
+    
+    printf("Digite a operação desejada: \n");
+    scanf(" %s", &operacao);
+    
+    printf("Digite numerador e denominador da segunda fração: \n");
+    scanf(" %d", &numerador2);
+    scanf(" %d", &denominador2);
+  
+    if (denominador1 == 0 || denominador2 == 0){
+      printf("\n\nNão foi possivel realizar a operação.");
+      break;
+    }
+  
+    a = numerador1 / denominador1;
+    b = numerador2 / denominador2;
+  
+    switch (operacao) {
+      case '+':
+      resultado = a + b;
+      break;
+    
+      case '-':
+      resultado = a - b;
+      break;
+    
+      case '*':
+      resultado = a * b;
+      break;
+    
+      case '/':
+      resultado = a / b;
+      break;
+    }
+
+    printf("Resultado = %f\n\n", resultado);
+    printf("Digite 'Y' para calcular novamente ou 'N' para sair: ");
+
+    scanf(" %s", &entrada);
+    if (entrada == 'N') {
+      break;
+    }
+
+  } while (entrada == 'Y');
+
+return 0;
+}

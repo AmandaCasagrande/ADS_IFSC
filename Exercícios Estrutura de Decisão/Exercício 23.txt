@@ -1,0 +1,34 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int valor, valor2, resto;
+  int n1, n2, n3, n4, n5;
+  
+  printf("Digite um valor: ");
+  scanf("%d", &valor);
+  
+  n5 = valor%10;
+  valor = valor/10;
+  n4 = valor%10;
+  valor = valor/10;
+  n3 = valor%10;
+  valor = valor/10;
+  n2 = valor%10;
+  valor = valor/10;
+  n1 = valor%10;
+  
+  valor2 = (n1 + n2 + n3 + n4 + n5);
+  resto = valor2 % 9;
+  
+  if (resto > 0) {
+    printf("Não divisível por 9.");
+  } else {
+    if (resto == 0) {
+      printf("Divisível por 9.");
+    }
+  }
+ 
+return 0;
+}
+

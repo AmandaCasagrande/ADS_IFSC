@@ -1,0 +1,14 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float nota1, nota2, nota3;
+  float media, calculo;
+  printf("Digite três notas: ");
+  scanf("%f %f %f", &nota1, &nota2, &nota3);
+  
+  calculo = (nota1 * 2) + (nota2 * 3) + (nota3 * 4) / 3;
+  printf("Resposta: %2.f", calculo);
+ 
+ return 0;
+}

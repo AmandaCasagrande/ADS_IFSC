@@ -1,0 +1,14 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float x, y;
+  float resultado, valorAbsoluto;
+  valorAbsoluto = 5;
+  
+  scanf("%f %f", &x, &y);
+  resultado = (x + y) + valorAbsoluto * (x - y) / 2;
+  printf("%2.f", valorAbsoluto);
+  
+ return 0;
+}
