@@ -1,0 +1,29 @@
+/*
+
+16. Leitura de números
+Faça um algoritmo que leia vários números e informe quantos desses números foram
+digitados entre 100 e 200. Quando o valor 0 (zero) for lido o algoritmo deverá parar
+sua execução.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int numero, contador = 0;
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+  
+  while (numero != 0){
+    if (numero >= 100 && numero <= 200) {
+      contador = contador + 1;
+    }
+    scanf(" %d", &numero);
+  }
+  
+  printf("Foram digitados %d numeros entre 100 e 200", contador);
+ 
+return 0;
+}
+

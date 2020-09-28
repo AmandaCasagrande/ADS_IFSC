@@ -1,0 +1,41 @@
+/*
+8. z2 Decimal para binário
+Faça um algoritmo que leia um número inteiro e converta-o para binário.
+Ex: 8 (base 10) = 100 ( base 2)
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+ 
+int decimal;
+int resto, quociente, contador = 0;
+int binario[10];
+ 
+int main(void) {
+ 
+  printf("Digite um número decimal: ");
+  scanf("%d", &decimal);
+  
+  quociente = decimal;
+  
+  while (quociente != 0) {
+    resto = quociente % 2;
+    quociente = quociente / 2;
+    binario[contador] = resto;
+    contador = contador + 1;
+  }
+  
+  printf("Resultado %d", binario[9]);
+  printf("%d", binario[8]);
+  printf("%d", binario[7]);
+  printf("%d", binario[6]);
+  printf("%d", binario[5]);
+  printf("%d", binario[4]);
+  printf("%d", binario[3]);
+  printf("%d", binario[2]);
+  printf("%d", binario[1]);
+  printf("%d", binario[0]);
+ 
+return 0;
+}

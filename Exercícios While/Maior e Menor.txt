@@ -1,0 +1,37 @@
+/*
+
+12. Maior e menor
+Faça um algoritmo que leia vários números e apresente ao final o maior e o menor de todos.
+O sistema termina de ler os números quando o usuário digitar 0.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int numero = 1;
+  int maxVal = 0, minVal = 0;
+  printf("Digite alguns números:\n");
+
+  while (numero > 0){
+    scanf("%d", &numero);
+
+    if (numero == 0){
+    break;
+    }
+  
+    if(numero > maxVal || maxVal == 0){
+      maxVal = numero;
+    }
+    
+    if (numero < minVal || minVal == 0){
+      minVal = numero;
+    }
+  }
+  
+  printf("Maior número = %d \n", maxVal);
+  printf("Menor número = %d \n", minVal);
+
+  return 0;
+}

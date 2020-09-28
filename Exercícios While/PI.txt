@@ -1,0 +1,44 @@
+
+/*
+
+Faça um algoritmo para calcular o valor de PI (3.1415...) através da série abaixo:
+
+O cálculo deve parar quando a diferença absoluta (abs) entre o valor de PI (gerado pela função M_PI da biblioteca math.h) e valor de PI calculado pela série acima for 
+menor do que 0.0001.
+
+*/
+
+#include <stdio.h>
+#include <math.h>
+#define M_PI 3.14159265358979323846
+ 
+int main(void){
+
+  float pi, diferenca;
+  int contador = 5;
+  char ultimaOperacao = '-';
+  
+  pi = 4 - (4.0 / 3.0);
+  diferenca = M_PI - pi;
+  
+  while (fabs(diferenca) > 0.0001) {
+    if (contador % 2 != 0) {
+      if (ultimaOperacao == '+') {
+        pi = pi - (4.0 / contador);
+        ultimaOperacao = '-';
+      } else {
+        if (ultimaOperacao == '-') {
+          pi = pi + (4.0 / contador);
+          ultimaOperacao = '+';       
+        }
+      }
+    }
+  diferenca = M_PI - pi; 
+  contador = contador + 1;
+  }
+  
+  printf("O PI calculado é %f", pi);
+return 0;
+}
+
+

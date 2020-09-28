@@ -1,0 +1,53 @@
+/*
+6. Validando dados digitados
+Faça um programa que leia e valide as seguintes informações:
+Idade: entre 0 e 150;
+Salário: maior que zero;
+Sexo: 'F' ou ‘M';
+Estado Civil: 'S', 'C', ‘V' ou 'D'.
+Caso o usuário digite de forma errada qualquer uma das informações acima, 
+uma mensagem de erro deve ser apresentada e o usuário deve digitar novamente.
+
+*/
+
+#include <stdio.h>
+int main(void) {
+ 
+  int idade;
+  float salario;
+  char sexo, estadoCivil;
+  
+  printf("Digite Idade: ");
+  scanf(" %d", &idade);
+  
+  while (idade < 0 || idade > 150){
+    printf("Idade inválida. Digite novamente: ");
+    scanf(" %d", &idade);
+  }
+  
+  printf("Digite Salário: ");
+  scanf(" %f", &salario);
+  
+  while (salario < 0){
+    printf("Salário inválido. Digite novamente: ");
+    scanf(" %f", &salario);
+  }
+  
+  printf("Digite Sexo: ");
+  scanf(" %c", &sexo);
+  
+  while (sexo != 'F' && sexo != 'M'){
+    printf("Sexo inválido. Digite novamente: ");
+    scanf(" %c", &sexo);
+  }
+  
+  printf("Digite Estado Civil: ");
+  scanf(" %c", &estadoCivil);
+  
+  while (estadoCivil != 'S' && estadoCivil != 'C' && estadoCivil != 'V' && estadoCivil != 'D'){
+    printf("Estado Civil inválido. Digite novamente: ");
+    scanf(" %c", &estadoCivil);
+  }
+  
+ return 0;
+}

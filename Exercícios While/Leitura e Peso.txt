@@ -1,0 +1,40 @@
+/*
+
+17. Leitura peso e altura
+Faça um algoritmo que leia o peso e a altura de várias pessoas até que seja digitado
+um valor negativo para o último peso. Após a leitura dos dados, o algoritmo deve informar
+o peso e a altura média dos valores lidos.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+  float peso = 1, altura, mediaPeso, mediaAltura;
+  float somaPeso = 0, somaAltura = 0, contadorPeso = 0, contadorAltura = 0;
+  
+  while (peso > 0){
+    printf("Digite o peso: ");
+    scanf(" %f", &peso);
+    
+    if (peso < 0){
+      break;
+    }
+    
+    contadorPeso = contadorPeso + 1;
+    somaPeso = somaPeso + peso;
+    
+    contadorAltura = contadorAltura + 1;
+    printf("Digite a altura: ");
+    scanf("%f", &altura);
+    somaAltura= somaAltura + altura;
+  }
+  
+  mediaPeso = somaPeso / contadorPeso;
+  printf("Média de Peso: %.2f Kg. \n", mediaPeso);
+  
+  mediaAltura = somaAltura / contadorAltura;
+  printf("Média de Altura: %.2f m.", mediaAltura);
+ 
+ return 0;
+}

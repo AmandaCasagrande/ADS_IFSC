@@ -1,0 +1,37 @@
+/*
+
+14. Equação de Pell
+A equação de Pell permite encontrar a parte inteira da raiz quadrada de um número simplesmente subtraindo inteiros ímpares e contando o número de subtrações efetuadas.
+Exemplo: Calcular a parte inteira da raiz quadrada de 15
+15 – 1 = 14
+14 – 3 = 11
+11 – 5 = 6
+Como 6 é menor que o próximo número ímpar (7), a sequência para
+aqui. Como foram realizadas 3 subtrações, então a resposta é 3.
+Faça um algoritmo para encontrar a parte inteira da raiz quadrada de
+um número usando a Equação de Pell.
+
+*/
+
+#include <stdio.h>
+ 
+int numero, contador = 1, resultado, subtracoes = 0;
+ 
+int main(void) {
+ 
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+  
+  resultado = numero;
+  while (resultado >= contador) {
+    if (contador % 2 != 0){
+      resultado = resultado - contador;
+      subtracoes = subtracoes + 1;
+    }
+    contador = contador + 1;
+  }
+  
+  printf("A parte inteira da raiz quadrada é %d", subtracoes);
+ 
+return 0;
+}

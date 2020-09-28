@@ -1,0 +1,33 @@
+/*
+
+11. z4 Desenhar triângulo retângulo
+Faça um algoritmo que leia um valor x e desenhe um triângulo retângulo de altura e base x, usando o caractere *.
+Exemplo: 
+Entrada: x = 5
+Saída:
+*
+* * 
+* * * *
+* * * * *
+* * * * * *
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+ 
+int main(void) {
+  int numero;
+  
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+  
+  for (int i = 1; i <= numero; i++) {
+    for (int x = 1; x <= i; x++) {
+      printf("* ");
+    }
+  printf("\n");
+  }
+ 
+  return 0;
+}

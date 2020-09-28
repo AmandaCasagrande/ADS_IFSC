@@ -1,0 +1,31 @@
+/*
+
+18. Maior
+Faça um algoritmo que leia vários números não-negativos e que apresente ao final
+o maior de todos. O sistema termina de ler os números quando o usuário digitar
+qualquer número negativo.
+
+*/
+
+#include <stdio.h>
+ 
+int numero, maiorNumero = 0;
+ 
+int main(void) {
+ 
+  printf("Digite um numero: ");
+  scanf("%d", &numero);
+  
+  while (numero >= 0) {
+    if (numero > maiorNumero) {
+      maiorNumero = numero;
+    }
+    
+    scanf(" %d", &numero);
+  }
+  
+  printf("O maior número é %d", maiorNumero);
+  
+  return 0;
+}
+

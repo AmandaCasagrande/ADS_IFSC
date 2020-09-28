@@ -2,52 +2,36 @@
  
 int main(void) {
  
-int A, B, S;
-int a1, a2, a3;
-int b1, b2, b3;
-int c2, c3;
-int R1, R2, R3;
+#include <stdio.h>
  
-printf("Digite dois números binários:\n ");
-scanf("%d %d",&A, &B);
+int main(void) {
  
-a3 = A%10;
-A = A/10;
-a2 = A%10;
-A = A/10;
-a1 = A%10;
- 
-b3 = B%10;
-B = B/10;
-b2 = B%10;
-B = B/10;
-b1 = B%10;
- 
- 
-if (a1 == 1 && b1 == 1){
- R1 = 0;
- c2 = 1;
-} else {
- R1 = a1 + b1;
-}
- 
-if (a2 == 1 && b2 == 1){
- R2 = 0;
- c3 = 1;
-} else {
- R2 = a2 + b2;
-}
- 
-if (a3 == 1 && b3 == 1){
- R3 = 0;
-} else {
- R3 = a3 + b3;
-}
- 
- 
- 
- 
-printf("%d", S);
+  int valor, valor2, resto;
+  int n1, n2, n3, n4, n5;
+  
+  printf("Digite um valor: ");
+  scanf("%d", &valor);
+  
+  n5 = valor%10;
+  valor = valor/10;
+  n4 = valor%10;
+  valor = valor/10;
+  n3 = valor%10;
+  valor = valor/10;
+  n2 = valor%10;
+  valor = valor/10;
+  n1 = valor%10;
+  
+  valor2 = (n1 + n2 + n3 + n4 + n5);
+  resto = valor2 % 9;
+  
+  if (resto > 0) {
+    printf("Não divisível por 9.");
+  } else {
+    if (resto == 0) {
+      printf("Divisível por 9.");
+    }
+  }
  
 return 0;
 }

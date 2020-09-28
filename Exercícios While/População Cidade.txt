@@ -1,0 +1,57 @@
+/*
+
+4. População cidade
+Escreva um programa que leia o nome e a população de várias cidades, e,
+ao final, indique a média populacional e  o nome e a população da cidade mais populosa.
+O programa deve encerrar quando o usuário digitar o caractere “*” como nome de uma cidade.
+
+Dica 1: para declarar uma variável que armazena uma cadeia de caracteres (string),use o modelo abaixo:
+char nomeCidade[10];
+
+Dica 2: para ler uma string, use o modelo abaixo:
+scanf("%s", nomeCidade);
+
+Dica 3: para acessar o primeiro caractere de uma string, use o modelo abaixo:
+nomeCidade[0]
+
+Dica 4: para copiar o valor da string1 para string2, use o modelo abaixo e inclua a biblioteca <string.h>:
+strcpy(string2, string1);
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+  
+int main(void) {
+
+  char nomeCidade[10], nomeCidadePopulosa[10];
+  int populacao, populacaoMaxima = 0, somaPopulacao = 0, contador = 0;
+  float media;
+  
+  while (nomeCidade[0] != '*') {
+    printf("Digite o nome da cidade: ");
+    scanf(" %s", nomeCidade);
+    
+    if (nomeCidade[0] == '*') {
+      break;
+    }
+    
+    printf("Digite o população dessa cidade: ");
+    scanf(" %i", &populacao);
+    
+    contador = contador + 1;
+    somaPopulacao = somaPopulacao + populacao;
+    
+    if (populacao > populacaoMaxima) {
+      populacaoMaxima = populacao;
+      strcpy(nomeCidadePopulosa, nomeCidade);
+    }
+  }
+  
+  media = somaPopulacao / contador;
+  printf("A média populacional é %.2f. \n", media);
+  printf("A cidade mais populosa é %s com %d habitantes. \n", nomeCidadePopulosa, populacaoMaxima);
+ 
+return 0;
+}
+

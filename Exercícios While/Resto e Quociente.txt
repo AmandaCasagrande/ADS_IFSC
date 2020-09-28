@@ -1,0 +1,44 @@
+/*
+
+5. Resto e quociente
+Faça um algoritmo que leia dois números inteiros positivos A e B e mostre o quociente e o
+resto da divisão de A por B, utilizando apenas as operações de
+adição e subtração.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+ 
+  int valorA, valorB, valorC;
+  float resto, quociente = 0;
+  
+  printf("Digite valor A: ");
+  scanf("%d", &valorA);
+  printf("Digite valor B: ");
+  scanf("%d", &valorB);
+  
+  valorC = valorA;
+  resto = valorA;
+  
+  while (valorC > 0){
+    quociente = quociente + 1;
+    resto =  resto - valorB;
+    valorC = valorC - valorB;
+  }
+  
+  if (resto != 0){
+    printf("Quociente = %.f \n", quociente - 1);
+  } else {
+    printf("Quociente = %.f \n", quociente);
+  }
+  
+  if (resto < 0){
+    printf("Resto = %.f", resto + 2);
+  } else {
+    printf("Resto = %.f", resto);
+  }
+  
+ return 0;
+}

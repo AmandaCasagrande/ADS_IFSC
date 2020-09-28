@@ -1,0 +1,63 @@
+#include <stdio.h>
+ 
+int main(void) {
+ 
+float numerador1, numerador2, denominador1, denominador2;
+float entrada, resultado;
+char operacao;
+ 
+float soma1, soma2, denomBorboleta;
+soma1 = numerador1 * denominador2; // 18
+soma2 = numerador2 * denominador1; // 40
+denomBorboleta = denominador1 * denominador2; // 48
+ 
+//resultado = soma1 + soma2 / denomBorboleta;
+ 
+do {
+ printf("Digite o numerador e o denominador: \n");
+ scanf(" %f %f", &numerador1, &denominador1);
+ 
+ printf("Digite a operação: ");
+ scanf(" %c", &operacao);
+ while (operacao != '+' && operacao != '-' && operacao != '*' && operacao != '/' ){
+   printf("Digite a operação: ");
+   scanf(" %c", &operacao);
+ }
+ 
+ printf("Digite o numerador e o denominador: ");
+ scanf(" %f %f", &numerador2, &denominador2);
+ 
+ if (denominador1 == 0 || denominador2 == 0 || numerador1 == 0 || numerador2 == 0){
+   printf("Não foi possível realizar a operação. ");
+   break;
+ } else {
+ 
+   switch (operacao){
+     case '+':
+       resultado = ((soma1 + soma2) / denomBorboleta);
+       break;
+     case '-':
+       resultado = ((soma1 + soma2) / denomBorboleta);
+       break;
+     case '*':
+       resultado = ((numerador1 * numerador2) / (denominador1 * denominador2));
+       break;
+     case '/':
+       resultado = ((numerador1 * denominador2) / (denominador1 * numerador2));
+       break;
+     }
+ 
+   printf("Resultado = %f \n\n", resultado);
+ 
+   printf("Deseja continuar?");
+   scanf("%f", &entrada);
+   while( entrada != 'N' && entrada != 'Y'){
+     printf("Deseja continuar?");
+     scanf("%f", &entrada);
+   }
+ }
+} while (entrada != 'Y' || entrada != 'N');
+ 
+return 0;
+}
+ 

@@ -1,0 +1,39 @@
+/*
+
+3. População
+Dados um país A com 50.000.000 de habitantes e crescimento populacional de 3% ao ano
+e um país B com 100.000.000 de habitantes e crescimento populacional de 2% ao ano,
+escreva um algoritmo para calcular em quantos anos o país A se tornará mais populoso
+que o país B.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  float popA, popB, contador = 0;
+  float porcentA, porcentB;
+  float popFinalA, popFinalB;
+  
+  popA = 50000000;
+  porcentA = (3.0 / 100); // 3%
+  
+  popB = 100000000;
+  porcentB = (2.0 / 100); // 2%
+  
+  popFinalA = popA;
+  popFinalB = popB;
+  
+  while (popFinalA < popFinalB){
+    contador = contador + 1;
+    popFinalA = popFinalA + (popFinalA * porcentA);
+    popFinalB = popFinalB + (popFinalB * porcentB);
+  
+    if (popFinalA > popFinalB){
+      printf("País A será mais populosa que país B em %.f anos.", contador);
+    }
+  }
+  
+ return 0;
+}

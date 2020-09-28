@@ -1,0 +1,38 @@
+/*
+
+12. Altura
+Fernando tem 1,50m e cresce 2cm por ano. Seu irmão Marcos tem 1,20m e cresce 4cm por ano.
+Faça um algoritmo para calcular em quantos anos Marcos será mais alto que Fernando.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+ 
+  float alturaF, alturaM, contador = 0;
+  float alturaFinalF,alturaFinalM;
+  float crescF, crescM;
+  
+  alturaF = 1.50;
+  alturaM = 1.20;
+  
+  crescF = 0.02;
+  crescM = 0.04;
+  
+  alturaFinalF = alturaF;
+  alturaFinalM = alturaM;
+  
+  while (alturaFinalF > alturaFinalM){
+    contador = contador + 1;
+    alturaFinalF = alturaFinalF + crescF;
+    alturaFinalM = alturaFinalM + crescM;
+  
+    if (alturaFinalF < alturaFinalM){
+      printf("Marcos será mais alto que Fernando em %.f ano(s).", contador);
+    }
+  }
+  
+ return 0;
+}
+

@@ -1,0 +1,38 @@
+/*
+
+8. Par ou ímpar
+Faça um algoritmo que leia vários números até que o usuário digite um valor negativo.
+Ao final, o algoritmo deve imprimir a quantidade de números pares e a quantidade de
+números ímpares lidos.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+  int numero = 1;
+  float contador1 = 0, contador2 = 0;
+  
+  printf("Digite alguns números:\n");
+  
+  while (numero > 0){
+    for(int i = 1; i <= 50; i++){
+      scanf("%d", &numero);
+    
+      if (numero < 0){
+      break;
+      }
+    
+      if (numero % 2 ==0){
+        contador1 = contador1 + 1;
+      } else {
+        contador2 = contador2 + 1;
+      }
+    }
+  }
+  
+  printf("Números Pares: %.f \n", contador1);
+  printf("Números Ímpares: %.f", contador2);
+
+  return 0;
+}

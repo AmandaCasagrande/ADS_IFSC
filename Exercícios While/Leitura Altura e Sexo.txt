@@ -1,0 +1,47 @@
+/*
+
+15. Leitura altura e sexo
+Faça um algoritmo que leia altura e o sexo (M/F) de várias pessoas,
+até que seja digitado X para o último sexo lido. Ao final, apresentar a
+altura média das pessoas do sexo feminino e do sexo masculino.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+ 
+  char sexo = 'F';
+  float altura, mediaAlturaF, mediaAlturaM;
+  float somaAlturaF = 0, contadorF = 0, contadorM = 0;
+  float somaAlturaM = 0;
+
+  while (sexo == 'F' || sexo == 'M'){
+    printf("Digite o sexo: ");
+    scanf(" %c", &sexo);
+
+    if (sexo == 'X'){
+    break;
+  }
+  
+  printf("Digite a altura: ");
+  scanf("%f", &altura);
+  
+  if (sexo == 'F'){
+    contadorF = contadorF + 1;
+    somaAlturaF = somaAlturaF + altura;
+    } else {
+      if (sexo == 'M'){
+      contadorM = contadorM + 1;
+      somaAlturaM = somaAlturaM + altura;
+      }
+    }
+  }
+
+  mediaAlturaF = somaAlturaF / contadorF;
+  printf("Média de altura do sexo feminino: %.2f \n", mediaAlturaF);
+  mediaAlturaM = somaAlturaM / contadorM;
+  printf("Média de altura do sexo masculino: %.2f", mediaAlturaM);
+
+  return 0;
+}

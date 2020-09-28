@@ -1,0 +1,35 @@
+/*
+
+9. z2 Tabuada de vários números
+Faça um algoritmo que leia vários números e que exiba para cada um deles a tabuada de
+multiplicação. O código -1 finaliza a leitura.
+
+DICA: aninhe duas estruturas de repetição
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+ 
+int numero;
+ 
+int main(void) {
+ 
+  printf("Digite um número: ");
+  scanf("%d", &numero);
+  
+  while (numero != -1) {
+  printf("Tabuada de %d: \n", numero);
+  
+  for (int i = 0; i <= 10; i++) {
+    printf("%d X %d = %d \n", i, numero, i * numero);
+  }
+  
+  printf("Digite um número: ");
+  scanf(" %d", &numero);
+  }
+ 
+return 0;
+}
+
+

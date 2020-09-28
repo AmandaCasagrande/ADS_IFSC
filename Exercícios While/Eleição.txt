@@ -1,0 +1,75 @@
+/*
+
+13. Eleição
+Em uma eleição para presidente existem 3 candidatos. Os votos são informados através dos códigos 1, 2, 3 para os respectivos candidatos; 4 para voto nulo; e 5 voto em branco.
+Escreva um algoritmo que calcule:
+a) Total de votos para cada candidato;
+b) Total de votos nulos;
+c) Total de votos em branco;
+d) Candidato Vencedor ou se houve empate;
+e) Percentual de votos brancos e nulos sobre o total.
+Como critério de parada, tem-se o código de votação 0
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  char entrada;
+  char c1 = '1', c2 =  '2', c3 = '3', nulo = '4', branco = '5';
+  int contador = 0, contadorC1 = 0, contadorC2 = 0, contadorC3 = 0, contadorNulo = 0, contadorBranco = 0;
+  float percentualBrancos, percentualNulos;
+  
+  printf("Digite os votos para os candidatos: ");
+  
+  while (entrada != '0'){
+    contador = contador + 1;
+    scanf("%c", &entrada);
+
+    if (entrada == c1){
+      contadorC1 = contadorC1 + 1;
+    }
+  
+    if (entrada == c2){
+      contadorC2 = contadorC2 + 1;
+    }
+    
+    if (entrada == c3){
+      contadorC3 = contadorC3 + 1;
+    }
+    
+    if (entrada == nulo){
+      contadorNulo = contadorNulo + 1;
+    }
+    
+    if (entrada == branco){
+      contadorBranco = contadorBranco + 1;
+    }
+  }
+  
+  printf("Total de votos para o candidato 1: %d \n", contadorC1);
+  printf("Total de votos para o candidato 2: %d \n", contadorC2);
+  printf("Total de votos para o candidato 3: %d \n", contadorC3);
+  printf("Total de votos nulos: %d \n", contadorNulo);
+  printf("Total de votos brancos: %d \n", contadorBranco);
+  
+  if (contadorC1 > contadorC2 && contadorC1 > contadorC3){
+    printf("Candidado Um é o vencedor! \n");
+  } else if (contadorC2 > contadorC1 && contadorC2 > contadorC3){
+    printf("Candidado Dois é o vencedor! \n");
+  } else if (contadorC3 > contadorC1 && contadorC3 > contadorC2){
+    printf("Candidado Três é o vencedor! \n");
+  } else if (contadorC1 == contadorC2 || contadorC1 == contadorC3 || contadorC2 == contadorC3){
+    printf("Empate! \n");
+  }
+  
+  percentualBrancos = ((100 *contadorBranco) / contador);
+  percentualNulos = ((100 * contadorNulo) / contador);
+  
+  printf("Percentual de votos Brancos: %.f%% \n", percentualBrancos);
+  printf("Percentual de votos Nulos: %.f%% \n", percentualNulos);
+
+ return 0;
+}
+

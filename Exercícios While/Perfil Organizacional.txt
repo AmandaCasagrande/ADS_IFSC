@@ -1,0 +1,79 @@
+/*
+ 1. Perfil organizacional
+Uma organização deseja traçar um perfil dos seus participantes. Para isso foi coletado apenas a Idade e o Sexo (M/F) de cada participante. A leitura dos dados se encerra quando a idade informada for negativa. Assim, determine:
+a) a média de idade dos homens
+b) a média de idade das mulheres
+c) o percentual de homens entre 25 e 33 anos
+d) o percentual de mulheres entre 18 e 25 anos
+e) a idade do homem mais idoso
+f) a idade da mulher mais idosa
+
+*/ 
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int idade, soma;
+  char sexo;
+  float percentH, mediaH, contIdadeH = 0, contH = 0;
+  float percentF, mediaF, contIdadeF = 0, contF = 0;
+  int somaH = 0, maxIdadeH = 0;
+  int somaF = 0, maxIdadeF = 0;
+  
+  printf("Digite a idade do(a) participante: ");
+  scanf(" %d", &idade);
+  printf("Digite o sexo do(a) participante: ");
+  scanf(" %c", &sexo);
+  
+  
+  while (idade != 0){
+    if (sexo == 'M'){
+      somaH = somaH + idade;
+      contH = contH + 1;
+    
+      if (idade >= 25 && idade <= 33){
+        contIdadeH = contIdadeH + 1;
+      }
+    
+      if (idade > maxIdadeH){
+        maxIdadeH = idade;
+      }
+    }
+    
+    if (sexo == 'F'){
+      somaF = somaF + idade;
+      contF = contF + 1;
+    
+      if (idade >= 19 && idade <= 25){
+        contIdadeF = contIdadeF + 1;
+      }
+    
+      if (idade > maxIdadeF) {
+        maxIdadeF = idade;
+      }
+    }
+    
+    printf("Digite a idade do(a) participante: ");
+    scanf(" %d", &idade);
+    
+    if (idade == 0){
+      break;
+    }
+    
+    printf("Digite o sexo do(a) participante: ");
+    scanf(" %c", &sexo);
+  }
+  
+  mediaH = somaH / contH;
+  mediaF = somaF / contF;
+  
+  percentH = (contIdadeH * 100) / contH;
+  percentF = (contIdadeF * 100) / contF;
+  
+  printf("\n\n Média de Idade dos Homens: %.2f \n Percentual de Homens entre 25 e 33 anos: %.2f%% \n Idade do Homem mais Idoso: %d anos \n \n", mediaH, percentH, maxIdadeH);
+  
+  printf(" Média de Idade das Mulheres: %.2f \n Percentual de Mulheres entre 18 e 25 anos: %.2f%% \n Idade da Mulher mais Idosa: %d anos", mediaF, percentF, maxIdadeF);
+ 
+ return 0;
+}
