@@ -1,0 +1,41 @@
+/*
+
+3. Ordenando vetor
+Faça um algoritmo para cadastrar 20 números inteiros em um vetor.
+Em seguida ordene os elementos do vetor em ordem crescente e exiba o vetor ordenado
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int vetor[20], aux, flag = 1;
+  
+  printf("Digite alguns números: \n");
+  
+  for (int x = 0; x <= 19; x++){
+    scanf("%d", &vetor[x]);
+  }
+  
+  while (flag == 1){
+  flag = 0;
+    for (int x = 0; x <= 19; x++){
+      if (vetor[x] > vetor[x + 1]){
+        aux = vetor[x];
+        vetor[x] = vetor[x + 1];
+        vetor[x+1] = aux;
+        flag = 1;
+      }
+    }
+  }
+  
+  printf("\n\nO vetor ordenado em ordem crescente é:  \n");
+  
+  for (int x = 0; x <= 19; x++){
+    printf("%d ", vetor[x]);
+  }
+ 
+ return 0;
+}
+

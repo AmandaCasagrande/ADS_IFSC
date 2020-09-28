@@ -1,0 +1,66 @@
+/*
+
+4. União
+Construa um algoritmo que leia dois vetores de inteiros A e B, cada um com 10 elementos.
+Em seguida, exiba os elementos da união entre A e B, ou seja, todos os elementos pertencentes
+só a A ou só a B ou a ambos.
+
+*/
+
+#include <stdio.h>
+int main(void) {
+ 
+  int flag; // 0 - Está em mais de um vetor - 1 Não está em mais de um vetor
+  int vetorA[10], vetorB[10];
+  
+  printf("Digite valores para A: \n");
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorA[x]);
+  }
+  
+  printf("\nDigite valores para B: \n");
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorB[x]);
+  }
+  
+  printf("\nEstá somente no vetor A: ");
+  for (int x = 0; x <= 9; x++){
+  flag = 1;
+  
+    for(int y = 0; y <= 9; y++){
+      if (vetorA[x] == vetorB[y]){
+        flag = 0;
+      }
+    }
+    
+    if (flag == 1) {
+      printf("%d, ", vetorA[x]);
+    }
+  }
+  
+  printf("\nEstá somente no vetor B: ");
+  for (int x = 0; x <= 9; x++){
+  flag = 1;
+  
+  for (int y = 0; y <= 9; y++){
+      if (vetorB[x] == vetorA[y]){
+        flag = 0;
+      }
+    }
+    
+    if (flag == 1) {
+      printf("%d, ", vetorB[x]);
+    }
+  }
+  
+  printf("\nEstão em ambos os vetores: ");
+  for (int x = 0; x <= 9; x++){
+    for(int y = 0; y <= 9; y++){
+      if (vetorA[x] == vetorB[y]){
+        printf("%d, ", vetorA[x]);
+      }
+    }
+  }
+  
+return 0;
+}

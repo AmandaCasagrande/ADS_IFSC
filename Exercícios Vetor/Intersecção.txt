@@ -1,0 +1,37 @@
+/*
+
+1. Intersecção
+Construa um algoritmo que leia dois vetores de inteiros A e B, cada um com 10 elementos.
+Em seguida, exiba os elementos da interseção entre A e B, ou seja, apenas os elementos que
+aparecem nos dois vetores.
+
+*/
+
+#include <stdio.h>
+
+int main(void) {
+
+  int vetorA[10], vetorB[10];
+
+  printf("Digite valores para A: \n");
+  
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorA[x]);
+  }
+  
+  printf("\nDigite valores para B: \n");
+
+  for (int x = 0; x <= 9; x++){
+    scanf(" %d", &vetorB[x]);
+  }
+  
+  for (int x = 0; x <= 9; x++){
+    for(int y = 0; y <= 9; y++){
+      if (vetorA[x] == vetorB[y]){
+        printf("\nElementoAB = %d", vetorA[x]);
+      }
+    }
+  }
+ 
+return 0;
+}
