@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+void cabecalho(void){
+  printf("******************************\n\n");
+  printf("         ÁREA DA PELE           ");
+  printf("\n\n******************************\n");
+
+  return;
+}
+
+float calculo (float massa, float altura){
+  float resultado = sqrt((massa * altura) / 3600);
+  return(resultado);
+}
+
+int main(void) {
+  float massa, altura, resultado;
+  cabecalho(); //chama a função
+
+  printf("\nDigite a massa em kg: ");
+  scanf("%f", &massa);
+  printf("Digite a altura: ");
+  scanf("%f", &altura);
+  
+  printf("\n******************************\n\n");
+
+  resultado = calculo(massa, altura); //chama a função
+  printf("Área de %f m².", resultado);
+
+  return 0;
+}
