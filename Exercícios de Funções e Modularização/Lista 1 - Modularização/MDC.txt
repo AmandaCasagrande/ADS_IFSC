@@ -1,0 +1,15 @@
+/*
+
+6. Módulo MDC
+Escreva um algoritmo que leia dois números inteiros e informe o MDC (máximo divisor comum)
+dos números lidos. Crie um módulo para calcular o MDC dos números lidos.
+
+O MDC de dois números é o maior número que os divide.
+Algoritmo de Euclides para calcular MDC(a, b):
+Divide a por b;
+Se o resto for igual a zero, o MDC será b.
+Se o resto for diferente de zero, a recebe b e b recebe o resto;
+Volte ao passo 1 até encontrar resto zero.
+
+
+*/

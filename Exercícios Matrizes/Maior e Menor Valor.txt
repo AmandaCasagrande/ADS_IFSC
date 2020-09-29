@@ -1,0 +1,53 @@
+/*
+
+7. Maior e menor valor
+Construa um algoritmo que leia uma matriz 4 x 4 e escreva a localização (linha e coluna)
+do maior e menor valor lido
+
+*/
+
+#include <stdio.h>
+int main(void) {
+ 
+  int matriz[4][4];
+  int maior = 0, menor = 0;
+  int maiorI = 0, maiorJ = 0, menorI = 0, menorJ = 0;
+  
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 4; j++){
+      printf("Digite os elementos: %d, %d = ", i, j);
+      scanf("%d", &matriz[i][j]);
+    }
+  }
+
+  printf("\n");
+  int x = 0;
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 4; j++){
+      printf("%5d", matriz[i][j]);
+    }
+  printf("\n");
+  }
+  
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 4; j++){
+    
+      if (matriz[i][j] > maior){
+        maior = matriz[i][j];
+        maiorI = i;
+        maiorJ = j;
+      }
+    
+      if (matriz[i][j] < menor){
+        menor = matriz[i][j];
+        menorI = i;
+        menorJ = j;
+      }
+    }
+  }
+  
+  printf("O menor está na posição %d %d. Valor: %d\n", menorI, menorJ, matriz[menorI][menorJ]);
+  printf("O maior está na posição %d %d. Valor: %d", maiorI, maiorJ, matriz[maiorI][maiorJ]);
+  
+return 0;
+}

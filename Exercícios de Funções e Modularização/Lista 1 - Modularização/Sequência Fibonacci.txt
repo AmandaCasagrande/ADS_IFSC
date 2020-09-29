@@ -1,0 +1,9 @@
+/*
+
+4. Módulo gerar sequência de Fibonacci.
+Faça um algoritmo que leia um número inteiro N e gere os N primeiros termos da sequência de
+Fibonacci (0,1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...)
+Crie um módulo com parâmetros para gerar os N primeiros termos da sequência de Fibonacci.
+
+
+*/

@@ -1,0 +1,42 @@
+/*
+
+8. Matriz de notas e média
+Construa um algoritmo que permita cadastrar o nome e as notas obtidas em 3 provas
+pelos 20 alunos de uma turma de Programação. Em seguida, o algoritmo deve calcular
+a média das notas de cada aluno e armazená-las. Finalmente, o algoritmo deve informar o nome,
+as 3 notas e a média de cada aluno.
+
+Observação: as notas e as médias devem ficar na mesma matriz.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int matrizNota[20][4];
+  char matrizNome[20][10];
+  
+  for(int i = 0; i < 20; i++){
+    printf("Digite nome: \n");
+    scanf("%s", matrizNome[i]);
+    for(int j = 0; j < 3; j++){
+      printf("Digite nota %d: \n", j);
+      scanf("%d", &matrizNota[i][j]);
+    }
+    matrizNota[i][3] = (matrizNota[i][0] + matrizNota[i][1] + matrizNota[i][2]) / 3;
+  }
+  
+  printf("\n");
+  
+  for(int i = 0; i < 20; i++){
+    printf("%s \n", matrizNome[i]);
+    printf("Notas: ");
+    for(int j = 0; j < 3; j++){
+      printf("%d, ", matrizNota[i][j]);
+    }
+    printf("Média: %d \n", matrizNota[i][3]);
+  }
+  
+return 0;
+}

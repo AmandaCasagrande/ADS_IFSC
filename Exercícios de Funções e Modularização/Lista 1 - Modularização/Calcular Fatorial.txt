@@ -1,0 +1,7 @@
+/*
+
+1. Módulo calcular fatorial
+Escreva um algoritmo que leia um número natural e mostre seu fatorial.
+Para isso, crie um módulo para calcular o fatorial do número lido.
+
+*/

@@ -1,0 +1,41 @@
+/*
+
+4. Construindo matrizes
+Construa um algoritmo que leia a quantidade de linhas(m) e colunas(n) de uma matriz e
+determine os elementos aij dessa matriz a partir da função abaixo:
+
+Imprima a matriz obtida no formato de tabela.
+
+*/
+
+#include <stdio.h>
+#include <math.h>
+ 
+int main(void) {
+  int m, n;
+  printf("Digite o valor de linhas: ");
+  scanf("%d", &m);
+  printf("Digite o valor de colunas: ");
+  scanf("%d", &n);
+  
+  int matriz[m][n];
+  
+  for (int i = 0; i < m; i++){
+    for (int j = 0; j < n; j++){
+      
+      if (i != j){
+        matriz[m][n] = (2 * (i + j));
+      }
+    
+      if (i == j){
+        matriz[m][n] = pow((i + j), 2);
+      }
+      printf("%5d", matriz[m][n]);
+    }
+  printf("\n");
+  }
+ 
+return 0;
+}
+
+

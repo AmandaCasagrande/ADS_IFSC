@@ -1,0 +1,42 @@
+/*
+
+10. Menor preço
+Crie um algoritmo que leia os preços de 15 produtos da cesta básica,
+anotados em 3 lojas diferentes, em uma matriz. Ao final, exibir uma listagem descrevendo
+a(s) loja(s) que contém o menor preço para cada produto.
+
+*/
+
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  char vetorLoja[15][10], aux;
+  int vetorPrecos[15][3], menorPreco = 0;
+  
+  for(int i = 0; i < 15; i++){
+    menorPreco = 0;
+    printf("Produto %d \n", i);
+
+    for(int j = 0; j < 3; j++){
+      printf("Digite a loja: ");
+      scanf(" %s", &aux);
+      printf("Digite o preço: ");
+      scanf(" %d", &vetorPrecos[i][j]);
+
+      if ((j == 0) || (vetorPrecos[i][j] < menorPreco)) {
+        menorPreco = vetorPrecos[i][j];
+        strcpy(vetorLoja[i], &aux);
+      }
+    }
+    printf("\n");
+  }
+  
+  printf("\n");
+  
+  for(int i = 0; i < 15; i++){
+    printf("Produto %d tem o menor preço na loja %s \n", i, vetorLoja[i]);
+  }
+
+  return 0;
+}

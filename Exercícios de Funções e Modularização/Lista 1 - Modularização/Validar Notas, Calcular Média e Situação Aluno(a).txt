@@ -1,0 +1,14 @@
+/*
+
+10. Módulo validar notas, calcular media e situação aluno
+Crie um módulo para validar uma nota e retornar a nota validada.
+A nota recebida pelo módulo deve ser um número de 0 até 10.
+Caso a nota recebida esteja fora desse intervalo, o algoritmo do módulo deve informar
+a mensagem “valor inválido” e solicitar outra nota até ser digitado um valor válido.
+
+No algoritmo principal, leia três notas, na qual serão validadas pelo módulo de validação.
+Na sequência, exiba as notas validadas e mostre a média dessas notas e a situação do aluno
+(aprovado (média >=6) ou reprovado).
+Crie um módulo para calcular a média e outro para mostrar a situação do aluno.
+
+*/

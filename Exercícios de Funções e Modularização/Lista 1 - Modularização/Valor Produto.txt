@@ -1,0 +1,11 @@
+/*
+
+11. Módulo valor produto
+Criar um algoritmo que calcule o total a pagar por um dado produto de supermercado.
+O algoritmo deve ler o nome do produto, valor unitário e quantidade comprada.
+O algoritmo deve exibir o nome do produto e o valor a ser pago.
+
+Crie um módulo para realizar o cálculo a ser utilizado pelo algoritmo
+
+
+*/

@@ -1,0 +1,47 @@
+/*
+
+14. Soma e subtração de matrizes
+Construa um algoritmo que leia duas matrizes A[3][5] e B[3][5] e determine:
+a) A + B
+b) A - B
+Exiba as matrizes no formato de tabela
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+ 
+  int A[4][5] = {2,3,1,4,5,1,-3,-5,0,8,2,5,6,3,-5,-1,0,1,2,3};
+  int B[4][5] = {1,2,0,-1,1,0,1,3,1,0,1,2,-1,4,5,2,3,4,1,2};
+  int C[4][5];
+  
+  printf("\n\nMatriz A: \n\n");
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 5; j++){
+      printf("%4d", A[i][j]);
+    }
+    printf("\n\n");
+  }
+  
+  printf("Matriz B: \n\n");
+
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 5; j++){
+      printf("%4d", B[i][j]);
+    }
+    printf("\n\n");
+  }
+  
+  printf("Matriz C = Matriz A + Matriz B: \n\n");
+  for (int i = 0; i < 4; i++){
+    for (int j = 0; j < 5; j++){
+      C[i][j] = A[i][j] +  B[i][j];
+      printf("%4d", C[i][j]);
+    }
+    
+    printf("\n\n");
+  }
+
+  return 0;
+}

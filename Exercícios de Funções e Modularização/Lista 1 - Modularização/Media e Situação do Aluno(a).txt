@@ -1,0 +1,9 @@
+/*
+
+7. Módulo media e situação aluno
+Escreva um algoritmo que leia o nome e as três notas de um aluno na disciplina de Programação
+e exiba o nome, a média do aluno e se está aprovado (média >=6) ou reprovado. Para isso, crie
+dois módulos, utilizando parâmetros: um para calcular e retornar a média de três números;
+e outro para verificar e mostrar a situação do aluno (aprovado ou reprovado).
+
+*/

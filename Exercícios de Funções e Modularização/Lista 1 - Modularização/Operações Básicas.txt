@@ -1,0 +1,8 @@
+/*
+
+3. Módulo calcular operações básicas
+Escreva um algoritmo para simular uma calculadora simples (+, -, *, /) usando modularização.
+Crie um módulo com parâmetros para cada operação
+
+
+*/

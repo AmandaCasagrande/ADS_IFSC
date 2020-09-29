@@ -1,0 +1,9 @@
+/*
+
+5. Módulo maior e menor número
+Escreva um algoritmo que leia 3 alturas e exiba a maior e a menor altura informada.
+Para isso, crie dois módulos com parâmetros: um para retornar o maior número entre três números
+reais; e outro para retornar o menor número entre três números reais.
+
+
+*/

@@ -1,0 +1,33 @@
+/*
+
+9. Matriz identidade
+Construa um algoritmo que crie uma matriz identidade de 10 X 10.
+E imprima a matriz no formato de tabela.
+
+*/
+
+#include <stdio.h>
+ 
+int main(void) {
+  int matriz[10][10];
+  for (int i = 0; i < 10; i++){
+    for (int j = 0; j < 10; j++){
+      printf("Digite os elementos: %d, %d = ", i, j);
+      scanf("%d", &matriz[i][j]);
+    }
+  }
+
+  printf("\n");
+  
+  int x = 0;
+  for (int i = 0; i < 10; i++){
+    for (int j = 0; j < 10; j++){
+      printf("%5d", matriz[i][j]);
+    }
+    printf("\n");
+  }
+  
+  return 0;
+ 
+}
+

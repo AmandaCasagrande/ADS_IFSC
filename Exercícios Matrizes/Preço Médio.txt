@@ -1,0 +1,32 @@
+/*
+
+11. Preço médio
+Crie um algoritmo que leia os preços de 15 produtos da cesta básica,
+anotados em 3 lojas diferentes, em uma matriz. Ao final, exibir uma listagem com o
+preço médio de cada produto.
+
+*/
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  float vetorPrecos[15][3], media;
+
+  for(int i = 0; i < 15; i++){
+    printf("Produto %d \n", i);
+      for(int j = 0; j < 3; j++){
+      printf("Digite o preço para a loja %d: ", j);
+      scanf(" %f", &vetorPrecos[i][j]);
+    }
+    printf("\n");
+  }
+  printf("\n");
+  
+  for(int i = 0; i < 15; i++){ 
+    media = (vetorPrecos[i][0] + vetorPrecos[i][1] + vetorPrecos[i][2]) / 3.0;
+    printf("O preço médio do produto %d é de: %.2f \n", i, media);
+  }
+  
+return 0;
+}
+

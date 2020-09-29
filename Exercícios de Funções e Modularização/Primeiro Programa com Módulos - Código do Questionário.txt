@@ -1,3 +1,17 @@
+/*
+
+2. Primeiro programa com módulos
+Faça um programa que exibe um cabeçalho na tela do computador e depois leia a massa (kg) e a altura (cm) de uma pessoa e calcule a área da superfície da pele.
+Crie um módulo (função) que não retorna nenhum valor e sem parâmetros para exibir o cabeçalho abaixo:
+
+******************************
+  	AREA DA PELE
+******************************
+
+Crie um módulo(função) que receba como parâmtros a massa e a altura de uma pessoa e calcule e retorne a área da superfície da pele. A fórmula a seguir calcula essa área em metros quadrados:
+*/
+
+
 #include <stdio.h>
 #include <math.h>
 

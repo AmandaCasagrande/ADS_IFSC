@@ -1,0 +1,9 @@
+/*
+
+2. Módulo calcular número de divisores e verificar se numero é primo
+Escreva um algoritmo que leia um número inteiro e informe se ele é ou não primo.
+Para isso, crie dois módulos com parâmetros: um para calcular e retornar o número de
+divisores de um número; e outro para verivicar e imprimir um mensagem informando se o número
+lido é ou não primo.
+
+*/
