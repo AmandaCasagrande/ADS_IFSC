@@ -5,3 +5,32 @@ Escreva um algoritmo que leia um número natural e mostre seu fatorial.
 Para isso, crie um módulo para calcular o fatorial do número lido.
 
 */
+
+#include <stdio.h>
+
+void cabecalho(void){
+  printf("__________________________\n\n");
+  printf("    CÁLCULO DE FATORIAL     \n");
+  printf("__________________________\n\n");
+  return;
+}
+
+float calculoFatorial (int fatorial, int numero){
+  for(fatorial = 1; numero > 1; numero = numero - 1){
+    fatorial = fatorial * numero;
+  }
+  return(fatorial);
+}
+
+int main(void) {
+
+  int numero, fatorial;
+  cabecalho(); //chama a função cabeçalho
+
+  printf("Digite o número que deseja calcular: ");
+  scanf("%d", &numero);
+
+  fatorial = calculoFatorial(fatorial, numero);
+  printf("\nResultado: %d", fatorial);
+  return 0;
+}
