@@ -7,3 +7,35 @@ divisores de um número; e outro para verivicar e imprimir um mensagem informand
 lido é ou não primo.
 
 */
+
+#include <stdio.h>
+
+int calculoDivisores (int numero){
+  int resto, divisores, cont = 0;
+  for(int divisor = 1; divisor <= numero; divisor++){
+    resto = numero % divisor;
+    if (resto == 0) {
+      cont = cont + 1;
+    }
+  }
+  return (cont);
+}
+
+void verificarPrimo (int divisores, int numero){
+  if (divisores == 2){
+    printf("O número %d é primo.", numero);
+  } else {
+    printf("O número %d não é primo.", numero);
+  }
+  return;
+}
+
+int main(void) {
+  int numero, resto, divisores;
+  printf("Digite um número: ");
+  scanf("%d", &numero);
+
+  verificarPrimo(calculoDivisores(numero), numero);
+
+  return 0;
+}
