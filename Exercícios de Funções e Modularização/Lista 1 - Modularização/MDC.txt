@@ -13,3 +13,26 @@ Volte ao passo 1 até encontrar resto zero.
 
 
 */
+
+#include <stdio.h>
+
+int calculoMDC(int num1, int num2) {
+  int resto;
+  do {
+    resto = num1 % num2;
+
+    num1 = num2;
+    num2 = resto;
+
+  } while (resto != 0);
+
+  return num1;
+}
+
+int main() {
+  int num1, num2;
+  printf("Digite dois números: ");
+  scanf("%d %d", &num1, &num2);
+  printf("O MDC é %d", calculoMDC(num1, num2));
+  return 0;
+}

@@ -22,3 +22,5 @@ void proc(int a, int b){
 
 
 */
+
+X = 20 Y = 10

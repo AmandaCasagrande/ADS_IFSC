@@ -1,0 +1,55 @@
+/*
+
+
+2. Módulo cadastrar valores, calcular maior e menor valor
+Faça um algoritmo para cadastrar N números inteiros.
+No final, o algoritmo deve informar o maior e o menor número do vetor.
+Crie trê módulos com parâmetros: um para cadastrar os elementos de um vetor;
+um para retornar o maior número de um vetor; e outro para retornar o menor número de um vetor;
+
+*/
+
+#include <stdio.h>
+
+void cadastroNumeros (int valores[], int n){
+  printf("Digite os valores para cadastrar: \n");
+  for (int i = 0; i < n; i++){
+    scanf("%d", &valores[i]);
+  }
+  return;
+}
+
+int maiorNumero (int valores[], int n){
+  float maiorValor = valores[0];
+  for(int i = 0; i < n; i++){     
+    if(valores[i] > maiorValor){
+      maiorValor = valores[i];
+    }
+  }
+  return maiorValor;
+}
+
+int menorNumero (int valores[], int n){
+  float menorValor = valores[0];
+
+  for(int i = 0; i < n; i++){      
+    if(valores[i] < menorValor){
+      menorValor = valores[i]; 
+    }
+  }
+  return menorValor;
+}
+
+
+int main(void) {
+  int n;
+  printf("Quantos números você deseja cadastrar? ");
+  scanf("%d", &n);
+  int valores[n];
+  cadastroNumeros(valores, n);
+  int maior = maiorNumero(valores, n);
+  printf("O maior número é %d \n", maior);
+  int menor = menorNumero(valores, n);
+  printf("O menor número é %d \n", menor);
+  return 0;
+}

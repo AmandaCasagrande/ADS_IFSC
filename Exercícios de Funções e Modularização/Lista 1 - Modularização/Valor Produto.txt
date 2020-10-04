@@ -9,3 +9,32 @@ Crie um módulo para realizar o cálculo a ser utilizado pelo algoritmo
 
 
 */
+
+#include <stdio.h>
+void cabecalho (void){
+  printf("\n\n**************************\n\n");
+  printf("  CALCULADORA DE PRODUTOS\n\n");
+  printf("***************************\n\n");
+  return;
+}
+float calculoTotal (float qntd, float valorUnid){
+  float total = qntd * valorUnid;
+  return(total);
+}
+
+int main(void) {
+  cabecalho();
+  char produto[10];
+  int qntd;
+  float valorUnid;
+
+  printf("Nome do produto: ");
+  scanf("%s", &produto[10]);
+  printf("Digite a quantidade a ser comprada: ");
+  scanf("%d", &qntd);
+  printf("Preço do produto: ");
+  scanf("%f", &valorUnid);
+
+  printf("Valor total da compra: R$ %.2f", calculoTotal(qntd,valorUnid));
+  return 0;
+}

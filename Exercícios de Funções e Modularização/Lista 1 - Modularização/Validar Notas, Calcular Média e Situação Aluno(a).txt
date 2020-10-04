@@ -12,3 +12,45 @@ Na sequência, exiba as notas validadas e mostre a média dessas notas e a situa
 Crie um módulo para calcular a média e outro para mostrar a situação do aluno.
 
 */
+
+#include<stdio.h>
+
+float calculoMedia(float n1, float n2, float n3){
+  float resultado = (n1 + n2 + n3) / 3;
+  return (resultado);
+}
+
+void situacao (float media){
+
+  if (media >= 6.0){
+    printf("\nAprovado(a).");
+  }
+
+  if (media < 6.0){
+    printf("\nReprovado(a).");
+  }
+  return;
+
+}
+
+float validacao (float nota){
+  while (nota < 0 || nota > 10){
+    printf("Digite novamente: ");
+    scanf("%f", &nota);
+  }
+  return(nota);
+}
+
+int main(){
+  float n1, n2, n3, media;
+  printf("Digite três notas para validação:\n");
+  scanf("%f", &n1);
+  n1 = validacao(n1);
+  scanf("%f", &n2);
+  n2 = validacao(n2);
+  scanf("%f", &n3);
+  n3 = validacao(n3);
+  media = calculoMedia(n1, n2, n3);
+  printf("Média: %.2f", media);
+  situacao(media);
+}

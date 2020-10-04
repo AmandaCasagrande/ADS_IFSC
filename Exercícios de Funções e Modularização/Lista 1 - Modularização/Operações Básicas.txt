@@ -6,3 +6,57 @@ Crie um módulo com parâmetros para cada operação
 
 
 */
+
+#include <stdio.h>
+
+void cabecalho1(void){
+  printf("*******************************\n");
+  printf("   ** CALCULADORA SIMPLES **   \n");
+  printf("*******************************\n\n");
+  
+}
+
+void cabecalho2(void){
+  printf("\n\n*******************************\n");
+  printf("        ** RESULTADOS **         \n");
+  printf("*******************************\n\n");
+  
+}
+
+float soma (float num1, float num2){
+  float soma = num1 + num2;
+  return(soma);
+}
+
+float subt (float num1, float num2){
+  float subt = num1 - num2;
+  return(subt);
+}
+
+float div (float num1, float num2){
+  float div = num1 / num2;
+  if (num2 == 0){
+    printf("Não é possível calcular divisão por zero.");
+  }
+  return(div);
+}
+
+float multi (float num1, float num2){
+  float multi = num1 * num2;
+  return(multi);
+}
+
+int main(void) {
+  cabecalho1();
+  float num1, num2;
+  printf("Digite um número: ");
+  scanf("%f", &num1);
+  printf("Digite outro número: ");
+  scanf("%f", &num2);
+  cabecalho2();
+  printf("Soma = %.2f\n", soma(num1, num2));
+  printf("Subtração = %.2f\n", subt(num1, num2));
+  printf("Divisão = %.2f\n", div(num1, num2));
+  printf("Multiplicação = %.2f\n", multi(num1, num2));
+  return 0;
+}

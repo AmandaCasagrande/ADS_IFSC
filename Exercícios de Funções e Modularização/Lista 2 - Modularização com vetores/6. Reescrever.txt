@@ -1,0 +1,222 @@
+/*
+
+6. Reescrevendo código
+O código a seguir cadastra N valores aleatórios de 0 a 9 em um vetor, ordena esse vetor e exibe: o vetor original; o vetor ordenado; o vetor sem números repetidos e a quantidade de vezes que cada valor aparece no vetor ordenado.
+A sua tarefa é reescrever esse algoritmo usando o conceito de modularização. Para isso, você deve criar somente os seguintes módulos:
+
+1) Módulo para cadastrar N valores aleatórios em um vetor.
+2) Módulo para exibir N valores de um vetor.
+3) Módulo para ordenar N valores de um vetor.
+4) Módulo para encontrar os valores que aparecem, sem repetição, em um vetor.
+5) Modulo para verificar se um número está ou não cadastrado em um vetor. (Este módulo deve ser chamado dentro do módulo anterior)
+6) Módulo para exibir a quantidade de vezes que cada valor aparece em um vetor (frequência).
+Utilize prototipação de módulos para reescrever esse código.
+
+Código para reescrever
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void) {
+  int n;
+  printf("Digite a qtd de elementos do vetor: ");
+  scanf("%d", &n);
+  int numeros[n], vAux[n];
+
+
+  //cadastra valores
+  srand(time(NULL));
+  for(int i = 0; i < n; i++){
+	numeros[i] = rand()%10;
+  }
+
+  printf("Vetor original\n");
+  for(int i = 0; i < n; i++){
+	printf("%3d", numeros[i]);
+  }
+
+  //ordena valores do vetor
+  int trocou = 1;
+  while(trocou){
+	trocou = 0;
+	for (int i = 0; i < n-1; i++){
+  	if(numeros[i]>numeros[i+1]){
+    	int aux = numeros[i];
+    	numeros[i] = numeros[i+1];
+    	numeros[i+1] = aux;
+    	trocou = 1;
+  	}
+	}
+  }
+ 
+  printf("\nVetor ordenado\n");
+  for(int i = 0; i < n; i++){
+	printf("%3d", numeros[i]);
+  }
+
+  //armazena os valores sem repetição no vetor auxiliar
+  int aux=0;
+  vAux[0] = numeros[0];
+  for (int i = 0; i < n; i++){
+	for(int j = 0; j < n; j++){
+  	int achou = 0;
+  	if (numeros[i]==numeros[j]){
+    	//verifica se o valor já está cadastrado em vAux
+    	for (int x = 0; x < aux; x++){
+      	if (numeros[i]==vAux[x]){
+          	achou = 1;
+      	}
+    	}
+    	if(!achou){
+      	vAux[aux] = numeros[i];
+      	aux++;
+    	}
+  	}
+	}
+  }
+
+  printf("\nVetor sem números repetidos\n");
+  for(int i = 0; i < aux; i++){
+	printf("%d ", vAux[i]);
+  }
+  printf("\n");
+
+  //exibe a quantidade de vezes cada número aparece
+  int cont;
+  for(int i = 0; i < aux; i++){
+	cont = 0;
+	for (int j = 0; j <n; j++){
+  	if (vAux[i]==numeros[j]){
+    	cont++;
+  	}
+	}
+	printf("%d aparece %d vez(es)\n", vAux[i], cont);
+  }
+
+  return 0;
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void cadastroNumeros (int numeros[], int n);
+void exibirVetorOriginal (int numeros[], int n);
+void ordenaVetor(int numeros[], int n);
+void exibirValoresNaoRepetidos(int numeros[], int n);
+void numeroEstaNoVetor (int numeros[], int n);
+void exibirFrequencia (int vAux [], int aux, int numeros[], int n);
+
+void cadastroNumeros (int numeros[], int n){
+  //cadastra valores
+  srand(time(NULL));
+  for(int i = 0; i < n; i++){
+	  numeros[i] = rand()%10;
+  }
+  return;
+}
+
+void exibirVetorOriginal (int numeros[], int n){
+  //imprime original
+  printf("Vetor original\n");
+  for(int i = 0; i < n; i++){
+	  printf("%3d", numeros[i]);
+  }
+  return;
+}
+
+void ordenaVetor(int numeros[], int n){
+  //ordena valores do vetor
+  int trocou = 1;
+  while(trocou){
+    trocou = 0;
+    for (int i = 0; i < n - 1; i++){
+      if(numeros[i]>numeros[i+1]){
+        int aux = numeros[i];
+        numeros[i] = numeros[i+1];
+        numeros[i+1] = aux;
+        trocou = 1;
+      }
+    }
+  }
+  return;
+}
+
+void exibirValoresNaoRepetidos(int numeros[], int n){
+  //armazena os valores sem repetição no vetor auxiliar
+  int vAux[n], aux=0;
+  vAux[0] = numeros[0];
+  for (int i = 0; i < n; i++){
+    for(int j = 0; j < n; j++){
+      int achou = 0;
+      if (numeros[i] ==numeros[j]){
+        //verifica se o valor já está cadastrado em vAux
+        for (int x = 0; x < aux; x++){
+          if (numeros[i] == vAux[x]){
+            achou = 1;
+          }
+        }
+        if(!achou){
+          vAux[aux] = numeros[i];
+          aux++;
+        }
+      }
+    }
+  }
+
+  printf("\nVetor sem números repetidos\n");
+  for(int i = 0; i < aux; i++){
+	  printf("%d ", vAux[i]);
+  }
+  printf("\n");
+
+  numeroEstaNoVetor(numeros, n);
+  exibirFrequencia(vAux, aux, numeros, n);
+  return;
+}
+
+void numeroEstaNoVetor (int numeros[], int n){
+  int numero;
+  printf("Digite um número para pesquisar no vetor: ");
+  scanf("%d", &numero); 
+
+  int achou = 0;
+  for (int i = 0; i < n; i++){
+    if (numeros[i] == numero) {
+      achou = 1;
+    }
+  }
+
+  if (achou == 1) {
+    printf("O número está no vetor \n");
+  } else {
+    printf("O número não está no vetor \n");
+  }
+}
+
+void exibirFrequencia (int vAux [], int aux, int numeros[], int n){
+  //exibe a quantidade de vezes cada número aparece
+  int cont;
+  for(int i = 0; i < aux; i++){
+    cont = 0;
+    for (int j = 0; j <n; j++){
+      if (vAux[i]==numeros[j]){
+        cont++;
+      }
+    }
+    printf("%d aparece %d vez(es)\n", vAux[i], cont);
+  }
+  return;
+}
+
+int main(void) {
+  int n;
+  printf("Digite a qtd de elementos do vetor: ");
+  scanf("%d", &n);
+  int numeros[n];
+  cadastroNumeros(numeros, n);
+  exibirVetorOriginal(numeros, n);
+  ordenaVetor(numeros, n);
+  exibirValoresNaoRepetidos(numeros, n);
+  return 0;
+}

@@ -7,3 +7,46 @@ reais; e outro para retornar o menor número entre três números reais.
 
 
 */
+
+#include <stdio.h>
+
+float maior(float num[]){
+  int maxVal = 0;
+
+  for(int i = 0; i <= 2; i++){
+    if (num[i] > maxVal || maxVal == 0){
+      maxVal = num[i];
+    }
+  }
+
+  return(maxVal);
+}
+
+float menor(float num[]){
+  int minVal = 0;
+
+  for(int i = 0; i <= 2; i++){
+    if (num[i] < minVal || minVal == 0){
+      minVal = num[i];
+    }
+  }
+
+  return(minVal);
+}
+
+int main(void) {
+  float num[2];
+  int maxVal, minVal;
+  
+  for(int i = 0; i <= 2; i++){
+    scanf("%f", &num[i]);
+  }
+
+  maxVal = maior(num);
+  minVal = menor(num);
+
+  printf("Maior número = %d \n", maxVal);
+  printf("Menor número = %d \n", minVal);
+
+  return 0;
+}

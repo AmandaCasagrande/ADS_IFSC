@@ -7,3 +7,39 @@ dois módulos, utilizando parâmetros: um para calcular e retornar a média de t
 e outro para verificar e mostrar a situação do aluno (aprovado ou reprovado).
 
 */
+
+#include <stdio.h>
+
+float mediaAlunos(float nota1, float nota2, float nota3){
+  float calculo;
+  calculo = (nota1 + nota2 + nota3) / 3;
+  return(calculo);
+}
+
+void situacaoAluno(float media){
+  if (media >= 6){
+    printf("Parabéns! Está aprovado(a)!");
+  } else {
+    printf("Não está aprovado(a).");
+  }
+  return;
+}
+
+int main(void) {
+  char nome[10];
+  float nota1, nota2, nota3, resultado;
+
+  printf("Digite um nome: \n");
+  scanf("%s", nome);
+  printf("Digite as notas dos(as) alunos(as): \n");
+  scanf("%f", &nota1);
+  scanf("%f", &nota2);
+  scanf("%f", &nota3);
+
+  resultado = mediaAlunos(nota1, nota2, nota3);
+  printf("Nome: %s\n", nome);
+  printf("Média: %2.f\n", resultado);
+  situacaoAluno(resultado);
+
+  return 0;
+}

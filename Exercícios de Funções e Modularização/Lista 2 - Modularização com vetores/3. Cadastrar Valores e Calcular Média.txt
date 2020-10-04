@@ -1,0 +1,42 @@
+/*
+
+Escreva um algoritmo que cadastre os pesos e alturas de N alunos de uma turma de informática.
+Em seguida, o algoritmo deve calcular e exibir a média dos pesos e alturas da turma. 
+Crie somente dois módulos com parâmetros: um para cadastrar valores em um vetor;
+e crie outro para calcular e retornar a média dos elementos de um vetor.
+
+*/
+
+#include <stdio.h>
+
+void cadastroNumeros (float valores[], int n){
+  for (int i = 0; i < n; i++){
+    scanf("%f", &valores[i]);
+  }
+  return;
+}
+
+float calculoMedia (float valores[], int n){
+  float media, soma = 0;
+  for(int i = 0; i < n; i++){
+    soma = soma + valores[i];
+  }
+  media = soma / n;
+  return media;
+}
+
+
+int main(void) {
+  printf("Quantos alunos(as) você deseja cadastrar? ");
+  int qntdAlunos;
+  scanf("%d", &qntdAlunos);
+  float pesos[qntdAlunos], alturas[qntdAlunos];
+  printf("Digite os pesos da turma: \n");
+  cadastroNumeros(pesos, qntdAlunos);
+  printf("Digite as alturas da turma: \n");
+  cadastroNumeros(alturas, qntdAlunos);
+  printf("\n\nA média dos elementos do vetor pesos é %.2f\n", calculoMedia(pesos, qntdAlunos));
+  printf("A média dos elementos do vetor altura é %.2f", calculoMedia(alturas, qntdAlunos));
+
+  return 0;
+}

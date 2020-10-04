@@ -7,3 +7,26 @@ Crie um módulo com parâmetros para gerar os N primeiros termos da sequência d
 
 
 */
+
+#include "stdio.h"
+
+int fibonacci (int n){
+  int auxiliar, a = 0, b=1;
+  for(int i = 0; i < n; i++){
+    auxiliar = a + b;
+    a = b;
+    b = auxiliar;
+    printf("%d\n", auxiliar);
+  }
+  return (fibonacci(n));
+}
+
+int main(void){
+  int n, b;
+  printf("Digite um número: ");
+  scanf("%d", &n);
+
+  printf("Série de Fibonacci:\n");
+  b = fibonacci(n);
+  printf("%d\n", b);
+}

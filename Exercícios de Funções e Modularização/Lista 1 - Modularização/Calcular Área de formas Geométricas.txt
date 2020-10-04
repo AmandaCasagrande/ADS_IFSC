@@ -15,3 +15,121 @@ Após o cálculo da área, volte a apresentar o menu inicial até que o usuário
 
 
 */
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14159265
+
+void cabelhoOpcoes(void){
+  printf("\n\n*********************************\n\n");
+  printf("  CÁLCULO DE FORMAS GEOMÉTRICAS   \n\n");
+  printf("*********************************\n\n");
+  printf("   1 - Quadrado\n   2 - Retângulo\n   3 - Triângulo\n   4 - Trapézio\n   5 - Losango\n   6 - Paralelograma\n   7 - Círculo\n   8 - Sair");
+  printf("\n\n*********************************\n\n");
+  printf("1) Digite a opção desejada: ");
+  return;
+}
+
+void calculoQuadrado (void){
+  float a;
+  printf("2) Digite o lado do quadrado: ");
+  scanf("%f", &a);
+  float resultado = pow(a, 2);
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoRetangulo (void){
+  float b, h;
+  printf("2) Digite o lado e altura do retângulo: ");
+  scanf("%f %f", &b, &h);
+  float resultado = b * h;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoTriangulo (void){
+  float b, h;
+  printf("2) Digite o lado e altura do triângulo: ");
+  scanf("%f %f", &b, &h);
+  float resultado = (b * h) / 2;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoTrapezio (void){
+  float B, b, h;
+  printf("2) Digite a base maior, base menor e altura do trapézio: ");
+  scanf("%f %f %f", &B, &b, &h);
+  float resultado = ((B + b) * h) / 2;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoLosango (void){
+  float D, d;
+  printf("2) Digite as duas diagonais do losango: ");
+  scanf("%f %f", &D, &d);
+  float resultado = (D * d) / 2;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoParalelogramo (void){
+  float b, h;
+  printf("2) Digite a base e altura do paralelogramo: ");
+  scanf("%f %f", &b, &h);
+  float resultado = b * h;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+void calculoCírculo (void){
+  float r;
+  printf("2) Digite o raio do círculo: ");
+  scanf("%f", &r);
+  float resultado = (PI * pow(r, 2)) ;
+  printf("\n\nResultado da área: %.2f", resultado);
+  return;
+}
+
+
+int main(void) {
+  char opcao;
+
+  do{
+    cabelhoOpcoes();
+    scanf("%s", &opcao);
+
+    switch (opcao){
+      case '1':
+        calculoQuadrado();
+      break;
+
+      case '2':
+        calculoRetangulo();
+      break;
+
+      case '3':
+        calculoTriangulo();
+      break;
+
+      case '4':
+        calculoTrapezio();
+      break;
+
+      case '5':
+        calculoLosango();
+      break;
+
+      case '6':
+        calculoParalelogramo();
+      break;
+
+      case '7':
+        calculoCírculo();
+      break;
+    }
+  } while (opcao != '8');
+  printf("\n\n****** FIM DO PROGRAMA ******");
+  return 0;
+}

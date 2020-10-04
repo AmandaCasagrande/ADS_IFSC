@@ -1,0 +1,33 @@
+/*
+
+5. Módulo cadastrar valores e informar valor(es) que mais se repete(m)
+
+Faça um algoritmo para cadastrar N números inteiros. 
+No final, o algoritmo deve informar o(s) número(s) que mais se repete(m)
+e a quantidade de vezes.
+Crie um módulo para cadastrar os números e outro para verificar
+o(s) número(s) que mais se repete(m).
+
+*/
+
+#include <stdio.h>
+
+int cadastroNumeros (int n){
+  printf("Quantos números você deseja cadastrar?");
+  scanf("%d", &n);
+  int entrada[n];
+  for (int i = 0; i <= n; i++){
+    scanf("%d", &entrada[i]);
+  }
+  return entrada[n];
+}
+
+int verificarNumeros (){
+
+}
+
+int main(void) {
+
+
+  return 0;
+}
