@@ -1,0 +1,61 @@
+/*
+1. IMC
+Escreva um algoritmo que leia alturas (m) e pesos (kg) de várias pessoas e calcule o
+IMC – Índice de massa corporal – de cada entrada. Exiba, para cada entrada,
+o valor do IMC e a classificação a partir da tabela a abaixo:
+
+Para fazer o cálculo do IMC e a classificação, crie os seguintes módulos:
+(1) módulo que receba como parâmetros a altura e o peso e retorne o
+IMC (IMC = peso/(altura*altura);
+(2) módulo que receba como parâmetro o IMC e exiba a classificação.
+
+As leituras da altura e do peso de cada pessoas devem ser realizadas no
+algoritmo principal (main), até que o usuário digite um valor negativo para a altura.
+O cálculo do IMC e a classificação devem ser feitos chamando os módulos correspondentes.
+*/
+
+
+#include <stdio.h>
+#include <math.h>
+
+float calculoIMC (float altura, float peso){
+  float calculo = peso / pow(altura, 2);
+  return(calculo);
+}
+
+void exibirIMC (float calculo){
+  printf("IMC = %.2f \n", calculo);
+  if (calculo > 30){
+    printf("Obesidade.\n");
+  } else {
+    if (calculo > 25 && calculo <= 30){
+      printf("Sobrepeso.\n");
+    } else {
+      if (calculo > 18.5 || calculo <= 25){
+        printf("Peso Normal.\n");
+      } else {
+        if (calculo <= 18.5){
+          printf("Abaixo do peso.\n");
+        }
+      }
+    }
+  }
+} 
+
+
+int main(void) {
+  float calculo, altura, peso;
+  do{
+    printf("Digite a altura e o peso: \n");
+    scanf("%f", &altura);
+    if (altura < 0){
+      return 0;
+    }
+    scanf("%f", &peso);
+    printf("\n");
+    calculo = calculoIMC(altura, peso);
+    exibirIMC(calculo);
+  } while (altura > 0);
+
+  return 0;
+}

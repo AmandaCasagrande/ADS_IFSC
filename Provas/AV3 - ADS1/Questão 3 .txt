@@ -1,0 +1,127 @@
+/*
+
+1. Operações sobre vetor
+Escreva um algoritmo para cadastrar N números reais em um vetor.
+N deve ser informado pelo usuário. Após o cadastro, o usuário
+pode realizar as seguintes operações sobre os elementos do
+vetor cadastrado: 1 – média dos elementos do vetor;
+2 – maior elemento do vetor; 3 – menor elemento do vetor;
+4 – soma dos elementos do vetor.
+
+Para isso, crie os seguintes módulos:
+
+(1) Módulo para cadastrar N valores, que recebe como
+parâmetros um vetor e o seu tamanho;
+
+(2) Módulo sem parâmetro que apresenta o menu inicial com
+as operações descritas e retorna a opção escolhida.
+Crie a opção “5 – sair” neste módulo.
+
+
+(3) Módulos que recebem como parâmetros um vetor e o
+seu tamanho para realizar cada uma das operações descritas.
+Esses módulos são chamados no algoritmo principal a partir da opção escolhida.
+
+ 
+No algoritmo principal (main), leia o tamanho do vetor N,
+cadastre os números chamando o módulo cadastrar, leia uma opção,
+chamando o módulo menu, e realize a operação desejada chamando o 
+módulo correspondente. Após realizar a operação desejada, volte a
+apresentar o menu inicial até que o usuário digite o valor da opção 5 (sair).
+
+*/
+#include <stdio.h>
+float somaVetor (int numeros, float vetor[numeros]);
+
+void cabecalho (void){
+  printf("\n\n***********************************\n\n");
+  printf("   ** OPERAÇÕES SOBRE VETORES **\n\n");
+  printf("***********************************\n\n");
+  printf("1 – média dos elementos do vetor;\n");
+  printf("2 – maior elemento do vetor;\n");
+  printf("3 – menor elemento do vetor;\n");
+  printf("4 – soma dos elementos do vetor;\n");
+  printf("5 – sair;\n\n");
+  printf("***********************************\n\n");
+  return;
+}
+
+void cadastroValores (int numeros, float vetor[]){
+  printf("Cadastre os valores abaixo: \n");
+  for(int i = 0; i < numeros; i++){
+    scanf("%f", &vetor[i]);
+  }
+  return;
+}
+
+float mediaVetor (int numeros, float vetor[]){
+  float media;
+  float soma = somaVetor(numeros, vetor);
+  media = soma / numeros;
+  return media;
+}
+
+float somaVetor (int numeros, float vetor[]){
+  float soma = 0;
+  for (int i = 0; i < numeros; i++){
+    soma = soma + vetor[i];
+  } 
+  return soma;
+}
+
+float maiorVetor (int numeros, float vetor[]){
+  float maiorNumero = vetor[0];
+  for(int i = 0; i < numeros; i++){
+    if(vetor[i] > maiorNumero){
+      maiorNumero = vetor[i];
+    }
+  }
+  return maiorNumero;
+}
+
+float menorVetor (int numeros, float vetor[]){
+  float menorNumero = vetor[0];
+
+  for(int i = 0; i < numeros; i++){
+    if(vetor[i] < menorNumero){
+      menorNumero = vetor[i]; 
+    }
+  }
+  return menorNumero;
+}
+
+
+int main(void) {
+  int numeros;
+  char opcao;
+  printf("Quantos números deseja cadastrar? ");
+  scanf("%d", &numeros);
+  float vetor[numeros];
+  cadastroValores(numeros, vetor);
+
+  while (opcao != 5){
+    cabecalho();
+    printf("Qual opção deseja realizar? ");
+    scanf("%s", &opcao);
+
+    switch (opcao){
+      case '1':
+        printf("A média do vetor é %.2f", mediaVetor(numeros, vetor));
+      break;
+      case '2':
+        printf("O maior vetor é %.2f", maiorVetor(numeros, vetor));
+      break;
+      case '3':
+        printf("O menor vetor é %.2f", menorVetor(numeros, vetor));
+      break;
+      case '4':
+        printf("A soma dos elementos é %.2f", somaVetor(numeros, vetor));
+      break;
+      case '5':
+        return 0;
+      break;
+    }
+  }
+  
+  return 0;
+}

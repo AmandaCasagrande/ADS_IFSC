@@ -1,0 +1,46 @@
+/*
+
+1. Tabuada
+Escreva um algoritmo que leia um número inteiro N (2 ≤ N ≤ 10) e
+exiba a tabuada da multiplicação do número lido.
+Para ler um número e exibir a tabuada, crie os seguintes módulos:
+
+(1) módulo sem parâmetros que leia um número, verifique se o número pertence
+ao intervalo especificado e retorne o número validado para o algoritmo principal (main).
+Caso o número não pertença ao intervalo especificado, o algoritmo do módulo deve
+informar a mensagem “valor inválido” e solicitar outro número até que o usuário
+digite um número válido;
+
+(2) módulo que receba como parâmetro o número lido e calcule e exiba a tabuada
+deste número. A saída da tabuada deve ter o mesmo formato de saída do exemplo.
+
+*/
+
+#include <stdio.h>
+
+int validarNumero (void){
+  int numero;
+  printf("Digite o número: ");
+  scanf("%d", &numero);
+  while (numero <= 2 || numero >= 10){
+    printf("Valor inválido!\nDigite novamente: ");
+    scanf("%d", &numero);
+  }
+  return (numero);
+}
+
+int calculoTabuada (int numero){
+  int resposta;
+  for (int i = 1; i <= 10; i++){
+    resposta = numero * i;
+    printf("%d x %d = %d \n", numero, i, resposta);
+  }
+  return (resposta);
+}
+
+int main(void) {
+  int numero;
+  numero = validarNumero();
+  calculoTabuada(numero);
+  return 0;
+}

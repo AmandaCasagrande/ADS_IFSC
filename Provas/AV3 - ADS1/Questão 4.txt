@@ -1,0 +1,96 @@
+/*
+
+1. Sequência balanceada
+Dizemos que uma sequência de n elementos, com n par,
+é balanceada se as seguintes somas são todas iguais:
+
+    • a soma do menor elemento com o maior
+    • a soma do segundo menor elemento com o segundo maior
+    • a soma do terceiro menor elemento com o terceiro maior
+    • …
+
+
+Exemplo:  2  4 -2  1  8 5  é uma sequência balanceada, pois -2 + 8 = 1 + 5 = 2 + 4
+
+
+Faça um algoritmo que leia um tamanho N par (não precisa verificar se é par)
+informado pelo usuário e armazene uma sequência de N números inteiros
+aleatórios entre 0 e 99 em um vetor. Após isso, o algoritmo deve verificar
+se essa sequência é balanceada ou não.
+
+Para resolver essa questão você deve criar um módulo para ARMAZENAR 
+números aleatórios em um vetor e um módulo para VERIFICAR se uma
+sequência é balanceada. As tarefas do módulo VERIFICAR podem ser
+divididas em DOIS módulos.
+
+*/
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
+
+void armazenar (int elementos, int vetor[]){
+  srand(time(NULL));
+  for (int i = 0; i < elementos; i++){
+    vetor[i] = rand() % 100;
+  }
+  return;
+}
+
+void verificar (int vetor[], int elementos){
+  int aux, flag = 1;
+
+  while (flag == 1){
+    flag = 0;
+    for (int i = 0; i <= elementos - 1; i++){
+      if (vetor[i] > vetor[i + 1]){
+        aux = vetor[i];
+        vetor[i] = vetor[i + 1];
+        vetor[i+1] = aux;
+        flag = 1;
+      }
+    }
+  }
+
+  for (int i = 0; i < elementos; i++){
+    printf("%d ", vetor[i]);
+  }
+}
+
+char somar (int vetor[], int elementos){
+  int j, aux, soma = 0;
+  j = elementos - 1;
+  aux = vetor[0] + vetor[j];
+
+  for(int i = 0; i < elementos / 2; i++){
+    soma = vetor[i] + vetor[j];
+    if (soma != aux) {
+      return('N');
+    }
+
+    j = j - 1;
+  }
+  return 'S';
+}
+
+int main(void) {
+  int elementos;
+  printf("Digite a quantidade de elementos: ");
+  scanf("%d", &elementos);
+  int vetor[elementos];
+  armazenar(elementos, vetor);
+  verificar(vetor, elementos);
+  char resultado = somar(vetor, elementos);
+  if (resultado == 'N'){
+    printf("\nSequência não balanceada.");
+  } else {
+    if (resultado == 'S'){
+    printf("\nSequência balanceada.");
+    }
+  }
+
+  return 0;
+}
